@@ -1,173 +1,141 @@
-/* ===== TOP BAR ===== */
+/* ===========================================================
+   TOP BAR (Franja superior negra con correo / teléfono)
+   =========================================================== */
 .top-bar {
   background-color: #040404;
   color: #f3f0f0;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 7px 24px;
-  font-size: 15px;
+  padding: 6px 28px;
+  font-size: 14px;
 }
 
 .social-icons a {
   color: #fff;
-  margin-right: 10px;
+  margin-right: 12px;
   font-size: 18px;
   text-decoration: none;
-}
-
-.social-icons a:hover {
-  color: #d91806cc;
 }
 
 .contact-info {
   display: flex;
   align-items: center;
-  gap: 12px;
+  gap: 16px;
 }
 
 .contact-link {
-  color: #f3eded;
+  color: #fff;
   text-decoration: none;
-  display: inline-flex;
-  align-items: center;
+  display: flex;
   gap: 6px;
-}
-
-.contact-link i {
-  font-size: 13px;
+  align-items: center;
 }
 
 .contact-link:hover {
-  color: #dc240c;
+  color: #d3b81e;
 }
 
-/* Teléfono escritorio */
-.call-cta {
-  display: inline-flex;
-  align-items: center;
-  gap: 9px;
-  background: #0fe220a2;
-  color: #fff;
-  padding: 8px 14px;
-  border-radius: 8px;
-  font-weight: 700;
-  text-decoration: none;
-  box-shadow: 0 2px 0 rgba(0,0,0,.15);
-}
-
-.call-cta i {
-  font-size: 14px;
-}
-
-/* Teléfono móvil */
-.call-fab {
-  display: none;
-  width: 40px;
-  height: 40px;
-  border-radius: 50%;
-  background: #e53935;
-  color: #fff;
-  align-items: center;
-  justify-content: center;
-  text-decoration: none;
-}
-
-/* ===== HEADER + NAVBAR ===== */
+/* ===========================================================
+   HEADER + NAVBAR PRINCIPAL (TRANSPARENTE)
+   =========================================================== */
 
 header {
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
-  z-index: 1000;
-  background: transparent;      /* 👈 header transparente */
+  z-index: 2000;
+  background: transparent !important;   /* 🔥 NAV SIEMPRE TRANSPARENTE */
 }
 
 .main-nav {
-  background: transparent;      /* 👈 nav transparente */
-  color: #fff;
+  width: 100%;
+  background: transparent !important;   /* 🔥 Este es el que importa */
   display: flex;
-  align-items: center;
   justify-content: space-between;
-  padding: 14px 32px;
-  height: 72px;
+  align-items: center;
+  padding: 18px 40px;
+  height: 80px;
 }
 
 /* Logo */
 .logo {
-  max-height: 70px;
-  width: auto;
-  display: block;
+  width: 115px;
+  height: auto;
+  object-fit: contain;
 }
 
-/* Menú */
+/* ===========================================================
+   MENÚ DE OPCIONES (Escritorio)
+   =========================================================== */
+
 .menu {
   list-style: none;
   display: flex;
-  align-items: center;
   gap: 24px;
+  align-items: center;
   margin: 0;
-  margin-left: auto;
-}
-
-.menu li {
-  position: relative;
+  padding: 0;
 }
 
 .menu a {
-  color: #fff;
   text-decoration: none;
-  padding: 18px 8px;
-  font-size: 1rem;
+  color: #fff;
+  font-size: 16px;
   font-weight: 600;
+  transition: color 0.3s ease;
+}
+
+.menu a:hover {
+  color: #d3b81e;
 }
 
 .menu a.active {
   border-bottom: 3px solid #d3b81e;
 }
 
-/* Botón Cotizar */
+/* ===========================================================
+   BOTÓN COTIZAR
+   =========================================================== */
+
 .cotizar-btn {
-  background-color: #d3b81e;
+  background: #d3b81e;
   color: #fff;
-  padding: 10px 26px;
-  font-size: 1rem;
-  border: none;
+  padding: 12px 28px;
   border-radius: 8px;
+  font-size: 1rem;
+  font-weight: bold;
   cursor: pointer;
-  font-weight: 700;
-  margin-left: 24px;
+  border: none;
+  transition: 0.3s ease;
 }
 
 .cotizar-btn:hover {
-  background-color: #fff;
+  background: #fff;
   color: #d3b81e;
 }
 
-/* Dropdown escritorio */
+/* ===========================================================
+   DROPDOWN SERVICIOS (ESCRITORIO)
+   =========================================================== */
+
 .dropdown-menu {
   position: absolute;
   top: 100%;
   left: 0;
   background: #111;
-  list-style: none;
-  margin: 0;
+  min-width: 240px;
   padding: 8px 0;
-  min-width: 260px;
+  list-style: none;
   display: none;
-  z-index: 1000;
-}
-
-.menu li:hover > .dropdown-menu {
-  display: block;
+  z-index: 2100;
 }
 
 .dropdown-menu a {
-  display: block;
-  padding: 10px 14px;
+  padding: 12px 16px;
   color: #fff;
-  font-size: .95rem;
+  display: block;
 }
 
 .dropdown-menu a:hover {
@@ -175,47 +143,45 @@ header {
   color: #111;
 }
 
-.dropdown-menu a.active-sub {
-  background: #d3b81e;
-  color: #111;
+.menu li:hover > .dropdown-menu {
+  display: block;
 }
 
-/* Hamburguesa hidden en desktop */
+/* ===========================================================
+   HAMBURGUESA (solo móvil)
+   =========================================================== */
+
 .menu-toggle {
   display: none;
   background: none;
   border: none;
   color: #fff;
-  font-size: 28px;
+  font-size: 32px;
   cursor: pointer;
-  margin-left: 16px;
 }
 
-/* ===== RESPONSIVE ===== */
+/* ===========================================================
+   RESPONSIVE
+   =========================================================== */
+
 @media (max-width: 768px) {
-  .top-bar {
-    padding: 4px 12px;
-    font-size: 11px;
-  }
-
-  .call-cta { display: none; }
-  .call-fab { display: inline-flex; }
-
+  /* Navbar más compacto */
   .main-nav {
-    padding: 0 12px;
-    height: 64px;
+    padding: 12px 20px;
+    height: 70px;
   }
 
   .logo {
-    max-height: 52px;
+    width: 90px;
   }
 
+  /* Mostrar hamburguesa */
   .menu-toggle {
-    display: inline-flex;
+    display: flex;
     align-items: center;
-    justify-content: center;
   }
 
+  /* Menú mobile oculto */
   .menu {
     position: absolute;
     top: 100%;
@@ -223,55 +189,37 @@ header {
     right: 0;
     flex-direction: column;
     background: #fff;
-    border-top: 1px solid #eee;
     display: none;
-    padding: 8px 0;
+    padding: 12px 0;
+    border-top: 1px solid #ddd;
+    z-index: 2100;
   }
 
+  /* Cuando se abre el menú */
   .menu.open {
     display: flex;
   }
 
-  .menu li {
-    width: 100%;
-  }
-
   .menu a {
     color: #111;
-    padding: 12px 16px;
+    padding: 14px 20px;
+    width: 100%;
+    text-align: left;
   }
 
-  .menu a.active {
-    border-bottom: none;
-    background: #f4f4f4;
-  }
-
+  /* Dropdown móvil */
   .dropdown-menu {
     position: static;
     background: #fff;
     border: 1px solid #eee;
     border-top: none;
     padding: 0;
-    min-width: 100%;
+    display: none;
   }
 
-  .dropdown-menu a {
-    color: #111;
-  }
-
+  /* Botón cotizar dentro del menú */
   .cotizar-btn {
-    margin-left: auto;
-    padding: 8px 14px;
-    font-size: .9rem;
-  }
-
-  .menu-toggle {
-    margin-left: 8px;
-  }
-
-  .menu.open + .cotizar-btn {
+    margin: 12px auto 10px;
     width: 90%;
-    margin: 10px auto 12px;
-    text-align: center;
   }
 }
