@@ -76,18 +76,19 @@ function Navbar() {
 
          {/* 📞 Contacto */}
     <div className="contact-info">
+      <a href="mailto:doris.s@tgruasanchez.com" className="contact-link">
+        <i className="fas fa-envelope"></i> doris.s@tgruasanchez.com
+      </a>
       <a href="tel:+51996046754" className="call-cta" aria-label="Llámanos al +51 996 046 754">
         <i className="fas fa-phone"></i>
-        <span>(+51) 996 046 754</span>
+        <span>(+51) 996 111 222</span>
       </a>
 
       <a href="tel:+51996046754" className="call-fab" aria-label="Llamar">
         <i className="fas fa-phone"></i>
       </a>
 
-      <a href="mailto:doris.s@tgruasanchez.com" className="contact-link">
-        <i className="fas fa-envelope"></i> doris.s@tgruasanchez.com
-      </a>
+      
     </div>
   </div>  {/* 👈 CIERRE DE top-bar QUE FALTABA */}
 

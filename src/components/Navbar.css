@@ -1,1127 +1,277 @@
-.cotizar-btn { 
-  background-color: #d3b81e; 
-  color: white; 
-  padding: 12px 30px; 
-  font-size: 1.1rem; 
-  border: none; 
-  border-radius: 6px; 
-  cursor: pointer; 
-  transition: all 0.3s ease; 
-  font-family: inherit; 
-  height: auto; 
-  align-self: center; /* clave para alinear con flex */ 
-} 
-
-.cotizar-btn:hover { 
-  background-color: #ffffff; 
-  color: #d3b81e; /* ✅ Misma tonalidad para hover */ 
-} 
-
-.top-bar { 
-  background-color: #000; 
-  color: white; 
-  display: flex; 
-  justify-content: space-between; 
-  padding: 5px 40px; 
-  font-size: 14px; 
-  align-items: center; 
-  border-bottom: 1px solid white; /* ✅ línea blanca divisora */ 
-} 
-
-.contact-info { 
-  display:flex; 
-  align-items:center; 
-  gap:0; /* 🔥 sin huecos entre items */ 
-} 
-
-.contact-info .sep { 
-  color:#fff; 
-  opacity:.7; 
-  margin:0 6px; /* 🔥 teléfonos bien pegados */ 
-} 
-
-.contact-info .contact-link:link, 
-.contact-info .contact-link:visited { 
-  color:#fff !important; 
-  text-decoration:none !important; 
-} 
-
-.contact-info .contact-link:hover { 
-  color:#d3b81e; /* hover en dorado */ 
-} 
-
-.contact-info .contact-link i { 
-  margin-right:6px; /* espacio entre icono y texto */ 
-} 
-
-.social-icons a { 
-  color: white; 
-  margin-right: 10px; 
-} 
-
-.contact-info span { 
-  margin-right: 20px; 
-} 
-
-.lang { 
-  font-weight: bold; 
-} 
-
-.main-nav { 
-  display: flex; 
-  align-items: center; 
-  justify-content: space-between; 
-  padding: 0 24px;        /* menos espacio lateral */
-  background-color: #000; 
-  color: white; 
-  height: 68px;           /* antes 100px */
-} 
-
-.logo { 
-  max-height: 56px;       /* antes 130px */
-  width: auto; 
-  display: block; 
-  object-fit: contain; 
+/* ===== TOP BAR ===== */
+.top-bar {
+  background-color: #040404;
+  color: #f3f0f0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 7px 24px;
+  font-size: 15px;
 }
 
-
-.menu { 
-  list-style: none; 
-  display: flex; 
-  gap: 25px; 
-  align-items: center; 
-  margin-left: auto; /* 🔥 mueve el menú a la derecha */ 
-  margin-right: 20px; 
-} 
-
-.menu li { 
-  position: relative; 
-  display: flex; 
-  align-items: center; 
-  margin-top: 6px; /* también puede funcionar desde aquí */ 
-} 
-
-.menu a { 
-  color: white; 
-  text-decoration: none; 
-  padding: 16px 8px; /* Aumentamos el padding vertical */ 
-  display: flex; 
-  align-items: center; 
-  height: 100%; 
-  line-height: 1; 
-  font-size: 1.1rem; 
-  margin-top: 6px; 
-} 
-
-.menu a.dlt { 
-  background-color: red; 
-  padding: 8px 12px; 
-} 
-
-.menu li:hover .dropdown-menu { 
-  display: block; 
-} 
-
-.dropdown-menu { 
-  list-style: none; /* 🔥 esto quita las bolitas */ 
-  position: absolute; 
-  top: 100%; 
-  left: 0; 
-  background-color: #111; 
-  padding: 10px; 
-  display: none; 
-  z-index: 1000; 
-  min-width: 280px; 
-} 
-
-.dropdown-menu li { 
-  margin: 8px 0; 
-  list-style-type: none; /* 🔥 elimina las bolitas solo en los <li> */ 
-} 
-
-.dropdown-menu li a { 
-  transition: background-color 0.3s ease; 
-  display: block; 
-  padding: 8px 12px; 
-} 
-
-.dropdown-menu li a:hover { 
-  background-color: #d3b81e; /* verde oscuro */ 
-  color: white; 
-} 
-
-.dropdown-menu a { 
-  color: white; 
-  text-decoration: none; 
-} 
-
-.menu a.active { 
-  position: relative; 
-  border-bottom: 3px solid #d3b81e; 
-} 
-
-.menu a.active::after { 
-  content: ''; 
-  position: absolute; 
-  bottom: -5px; 
-  left: 0; 
-  width: 100%; 
-  height: 3px; 
-  background-color: #d3b81e; 
-  border-radius: 2px; 
-} 
-
-/* 🔒 Mantener navbar fijo arriba */ 
-header { 
-  position: fixed; 
-  top: 0; 
-  left: 0; 
-  width: 100%; 
-  z-index: 1000; 
-} 
-
-/* Añade al final de tu Navbar.css */ 
-.menu-toggle { 
-  display: none; 
-  background: none; 
-  font-size: 28px; 
-  color: white; 
-  border: none; 
-  cursor: pointer; 
-  margin-left: auto; 
-} 
-
-@media (max-width: 768px) { 
-  .menu { 
-    display: none; 
-    flex-direction: column; 
-    background-color: #000; 
-    position: absolute; 
-    top: 100%; 
-    left: 0; 
-    width: 100%; 
-    padding: 10px 0; 
-  } 
-
-  .menu.open { 
-    display: flex; 
-  } 
-
-  .dropdown-menu { 
-    position: relative; 
-    background-color: #111; 
-    min-width: 100%; 
-  } 
-
-  .menu-toggle { 
-    display: block; 
-  } 
-
-  .cotizar-btn { 
-    margin-top: 10px; 
-    width: 90%; 
-    margin-left: auto; 
-    margin-right: auto; 
-  } 
-
-  .main-nav .cotizar-btn { 
-    margin-left: 20px; /* Espacio entre el menú y el botón */ 
-    align-self: center; /* ✅ Alineación vertical con el menú */ 
-    padding: 12px 30px; /* Tamaño más uniforme */ 
-    height: auto; /* Asegura que no se estire */ 
-  } 
-} 
-
-header { 
-  background-color: #000; /* Asegura que no haya fondo blanco por detrás */ 
-  border-bottom: none !important; /* Elimina cualquier borde residual */ 
-} 
-
-.menu.open { 
-  border-top: none !important; 
-} 
-
-.menu { 
-  border: none !important; 
-  margin-top: 0 !important; 
-} 
-
-.menu li { 
-  border: none !important; 
-} 
-
-body { 
-  margin: 0; 
-  padding: 0; 
-} 
-
-.contact-info a[href^="mailto"] { 
-  margin-left: 20px; /* ajusta el valor según lo que necesites */ 
+.social-icons a {
+  color: #fff;
+  margin-right: 10px;
+  font-size: 18px;
+  text-decoration: none;
 }
 
+.social-icons a:hover {
+  color: #d91806cc;
+}
 
-/* ——— TOP BAR COMPACT ——— */
-.top-bar{
-  padding: 6px 18px;
+.contact-info {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.contact-link {
+  color: #f3eded;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.contact-link i {
   font-size: 13px;
-  line-height: 1.1;
-  border-bottom: 1px solid rgba(255,255,255,.18);
-}
-.social-icons a{ font-size: 14px; margin-right: 8px; }
-.contact-info{ gap: 8px; flex-wrap: nowrap; white-space: nowrap; }
-.contact-info .contact-link{ display:inline-flex; align-items:center; gap:6px; }
-.contact-info .contact-link i{ margin-right:0; font-size: 13px; }
-.contact-info .sep{ margin: 0 6px; }
-
-/* ——— NAVBAR COMPACT ——— */
-.main-nav{ padding: 0 18px; height: 72px; }
-.logo{ max-height: 64px; }
-.menu-toggle{ font-size: 24px; padding: 4px 8px; }
-.cotizar-btn{ padding: 10px 18px; font-size: .98rem; border-radius: 6px; }
-
-/* ====== Tablet (<= 992px) ====== */
-@media (max-width: 992px){
-  .top-bar{ padding: 6px 16px; font-size: 12px; }
-  .main-nav{ height: 64px; padding: 0 16px; }
-  .logo{ max-height: 56px; }
-  .cotizar-btn{ padding: 9px 16px; font-size: .95rem; }
-  .menu a{ font-size: 1rem; }
 }
 
-/* ====== Móvil (<= 768px) ====== */
-@media (max-width: 768px){
-  .top-bar{ padding: 4px 12px; font-size: 11px; }
-  .social-icons a{ font-size: 13px; margin-right: 6px; }
-
-  .main-nav{
-    height: 58px;
-    padding: 0 12px;
-    gap: 10px;
-  }
-  .logo{ max-height: 50px; }
-  .menu-toggle{ font-size: 22px; }
-  .cotizar-btn{
-    padding: 8px 14px;
-    font-size: .9rem;
-    border-radius: 5px;
-  }
-
-  /* Menú desplegable móvil */
-  .menu{
-    top: 100%;
-    border-top: 1px solid rgba(255,255,255,.12);
-  }
+.contact-link:hover {
+  color: #dc240c;
 }
 
-/* ====== Muy pequeño (<= 480px): simplificamos el contenido ====== */
-@media (max-width: 480px){
-  /* Oculta 2º teléfono y el separador "/" */
-  .contact-info .contact-link:nth-of-type(2),
-  .contact-info .sep{ display:none; }
-
-  /* El email queda solo como ícono para ahorrar espacio */
-  .contact-info .contact-link[href^="mailto"]{ font-size:0; }
-  .contact-info .contact-link[href^="mailto"] i{
-    font-size: 14px; margin: 0 0 0 8px;
-  }
-
-  .main-nav{ height: 54px; }
-  .logo{ max-height: 46px; }
-  .cotizar-btn{ padding: 7px 12px; font-size: .88rem; }
+/* Teléfono escritorio */
+.call-cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 9px;
+  background: #0fe220a2;
+  color: #fff;
+  padding: 8px 14px;
+  border-radius: 8px;
+  font-weight: 700;
+  text-decoration: none;
+  box-shadow: 0 2px 0 rgba(0,0,0,.15);
 }
 
-/* === Ajustes pedidos (móvil) === */
-@media (max-width: 768px){
-
-  /* 1) Subir tamaño del logo */
-  .logo{
-    max-height: 62px;        /* antes ~50px */
-  }
-
-  /* 2) Bajar el borde negro (más alto el nav) */
-  .main-nav{
-    height: 68px;            /* antes 58px */
-    padding: 0 12px 4px;     /* un poco de padding inferior */
-  }
-
-  /* 3) Botón Cotizar más pequeño y SIN ancho 90% dentro del nav */
-  .main-nav .cotizar-btn{
-    width: auto !important;  /* anula el 90% general */
-    padding: 6px 12px;       /* más compacto */
-    font-size: .88rem;
-    border-radius: 6px;
-    margin-left: 12px;
-  }
-
-  /* Mantener ancho 90% SOLO cuando el menú móvil está abierto,
-     para que el botón salga debajo del menú ocupando el ancho */
-  .menu.open + .cotizar-btn{
-    width: 90% !important;
-    margin: 10px auto 12px;
-    padding: 10px 16px;      /* un poco más cómodo en la lista */
-    font-size: .95rem;
-  }
+.call-cta i {
+  font-size: 14px;
 }
 
-/* Opcional: en móviles muy pequeños subimos un pelín más el logo
-   y seguimos compactando el botón */
-@media (max-width: 420px){
-  .logo{ max-height: 64px; }
-  .main-nav{ height: 72px; }
-  .main-nav .cotizar-btn{ padding: 6px 10px; font-size: .86rem; }
+/* Teléfono móvil */
+.call-fab {
+  display: none;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: #e53935;
+  color: #fff;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
 }
 
-/* ——— Dropdown por CLICK en móvil (usa tu <a class="active">) ——— */
-.menu > li > a { cursor: pointer; }
+/* ===== HEADER + NAVBAR ===== */
 
-@media (max-width: 768px){
-  /* Desactiva comportamiento por hover en móvil */
-  .menu li:hover > .dropdown-menu{ display: none; }
-
-  /* El submenú ocupa el ancho del menú móvil */
-  .dropdown-menu{
-    position: relative;
-    min-width: 100%;
-  }
-
-  /* ✅ Muestra el submenú cuando el <a> tiene la clase .active */
-  .dropdown > a.active + .dropdown-menu{
-    display: block;
-  }
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+  background: transparent;      /* 👈 header transparente */
 }
 
-
-/* === Overrides de alineación y tamaños (móvil) === */
-
-/* Empuja todo a la izquierda y deja que la hamburguesa + Cotizar vivan a la derecha */
-.main-nav{
-  justify-content: flex-start;        /* antes: space-between */
+.main-nav {
+  background: transparent;      /* 👈 nav transparente */
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 14px 32px;
+  height: 72px;
 }
 
-/* La hamburguesa crea “espacio flexible” a su izquierda → se va a la derecha */
-.menu-toggle{
-  margin-left: auto;                   /* clave para pegarla al lado derecho */
-}
-
-/* Un pequeño gap entre hamburguesa y Cotizar */
-.cotizar-btn{
-  margin-left: 12px;
-}
-
-/* Móvil */
-@media (max-width: 768px){
-  /* Logo más grande */
-  .logo{
-    max-height: 68px;                  /* ↑ antes ~50–62px */
-  }
-
-  /* Un poco más alto y con menos padding a la derecha para que todo quede más “pegado” */
-  .main-nav{
-    height: 72px;                      /* ↑ */
-    padding: 0 8px 4px 12px;           /* derecha más pequeña -> botones más a la derecha */
-  }
-}
-
-/* Mini-móvil */
-@media (max-width: 420px){
-  .logo{ max-height: 72px; }           /* aún un poco más grande si quieres */
-  .main-nav{ height: 76px; }
-}
-
-/* ========== LOGO GRANDE EN DESKTOP (override) ========== */
-@media (min-width: 992px){
-  .main-nav{
-    height: 108px;          /* más alto para alojar el logo */
-    padding: 0 40px;
-  }
-  .logo{
-    max-height: 96px;       /* ↑ mucho más grande */
-    width: auto;
-  }
-}
-
-/* Extra grande (monitores anchos) */
-@media (min-width: 1400px){
-  .main-nav{ height: 124px; }
-  .logo{ max-height: 112px; }
-}
-
-/* Opcional: si también lo quieres un poco más grande en tablet */
-@media (min-width: 768px) and (max-width: 991.98px){
-  .main-nav{ height: 96px; }
-  .logo{ max-height: 84px; }
-}
-
-/* ====== FIX SOLO MÓVIL: submenú DEBAJO y alineado ====== */
-@media (max-width: 768px){
-
-  /* El <li> NO debe ser flex en móvil: apila <a> y <ul> */
-  .menu > li{
-    display: block !important;
-    align-items: stretch !important;
-    margin-top: 0;
-    width: 100%;
-  }
-  .menu > li.dropdown{
-    display: block !important;      /* aseguramos flujo vertical */
-  }
-
-  /* Botón del grupo: verde solo cuando está activo (ya usas .active) */
-  .menu .dropdown > a{
-    width: 100%;
-  }
-  .menu .dropdown > a.active{
-    display: flex; justify-content: space-between; align-items: center;
-    padding: 12px 14px;
-    background: #2d5e2f;           /* verde */
-    color: #fff; font-weight: 700;
-    border-radius: 1px 1px 0 0;
-    box-shadow: inset 0 -4px 0 #d3b81e;  /* franja dorada */
-  }
-
-  /* Panel con opciones: entra al flujo y ocupa todo el ancho */
-  .menu .dropdown > .dropdown-menu{
-    position: static !important;    /* ⇐ clave: debajo del botón */
-    display: none;                   /* se muestra solo si el botón está activo */
-    width: 100% !important;
-    margin: 0 !important;
-    padding: 6px 0;                  /* sin sangría lateral */
-    background: #f1f1f1 !important;
-    border: 1px solid #e2e2e2; border-top: none;
-    border-radius: 0 0 1px 1px;
-    box-shadow: none;
-  }
-
-  /* Mostrar al hacer click (tu JS ya añade .active al <a>) */
-  .menu .dropdown > a.active + .dropdown-menu{
-    display: block !important;
-  }
-
-  /* Items del submenú */
-  .menu .dropdown-menu li{ list-style: none; }
-  .menu .dropdown-menu a{
-    display: block;
-    padding: 12px 16px;
-    color: #111; font-weight: 600;
-    border-bottom: 1px solid #e9e9e9;
-  }
-  .menu .dropdown-menu li:last-child a{ border-bottom: none; }
-  .menu .dropdown-menu a:hover{ background: #d3b81e; color: #fff; }
-
-  /* En móvil desactiva apertura por hover */
-  .menu li:hover > .dropdown-menu{ display: none !important; }
-
-  /* Quita el subrayado dorado de los links activos (lo usamos solo en desktop) */
-  .menu a.active{ border-bottom: 0 !important; }
-  .menu a.active::after{ content: none !important; }
-}
-
-/* ===== MÓVIL: Cotizar antes que el icono del menú ===== */
-@media (max-width: 768px){
-
-  /* Ordenamos los elementos dentro de .main-nav */
-  .main-nav a > .logo,          /* <Link><img class="logo" /></Link> */
-  .main-nav .logo { order: 1; }
-
-  .main-nav .cotizar-btn{
-    order: 2;
-    margin-left: auto;     /* empuja Cotizar hacia la derecha */
-  }
-
-  .main-nav .menu-toggle{
-    order: 3;
-    margin-left: 8px !important;   /* queda a la derecha de Cotizar */
-  }
-
-  .main-nav .menu{ order: 4; }     /* el menú (lista) cae debajo */
-
-  /* Cuando el menú se abre, mandamos Cotizar debajo del menú
-     (mantiene tu comportamiento actual) */
-  .menu.open + .cotizar-btn{
-    order: 5;                       /* ⬅ mueve debajo de la lista */
-    width: 90% !important;
-    margin: 10px auto 12px;
-    padding: 10px 16px;
-    font-size: .95rem;
-  }
-}
-
-/* ====== MÓVIL: logo, Cotizar y menú más grandes ====== */
-@media (max-width: 768px){
-
-  /* más alto para alojar los tamaños grandes */
-  .main-nav{
-    height: 84px;                 /* antes 72px aprox */
-    padding: 0 12px;
-  }
-
-  /* LOGO más grande */
-  .main-nav .logo{
-    max-height: 78px !important;  /* ↑ */
-    width: auto;
-  }
-
-  /* BOTÓN COTIZAR más grande (mantiene tu orden actual) */
-  .main-nav .cotizar-btn{
-    padding: 10px 22px !important;
-    font-size: 1.05rem !important;
-    border-radius: 8px;
-  }
-
-  /* cuando el menú está abierto y Cotizar baja debajo de la lista */
-  .menu.open + .cotizar-btn{
-    padding: 12px 18px !important;
-    font-size: 1.08rem !important;
-  }
-
-  /* HAMBURGUESA (área táctil grande) */
-  .main-nav .menu-toggle{
-    font-size: 32px !important;     /* icono ☰ más grande */
-    padding: 8px 12px !important;   /* más “clickable” */
-    width: 44px; height: 44px;      /* objetivo táctil 44px */
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    line-height: 1;
-  }
-}
-
-/* Mini-móvil: un poquito más grandes todavía */
-@media (max-width: 420px){
-  .main-nav{ height: 88px; }
-  .main-nav .logo{ max-height: 82px !important; }
-  .main-nav .menu-toggle{
-    font-size: 34px !important;
-    width: 46px; height: 46px;
-  }
-}
-
-/* === MENÚ MÓVIL: opciones en blanco === */
-@media (max-width: 768px){
-  /* Lista principal */
-  .menu{
-    background-color: #fff !important;   /* antes #000 */
-    border-top: 1px solid #e9e9e9;
-  }
-  .menu a{
-    color: #111 !important;              /* texto oscuro para buen contraste */
-  }
-  .menu > li{
-    border-bottom: 1px solid #efefef;    /* separadores sutiles */
-  }
-  .menu > li:last-child{ border-bottom: 0; }
-
-  /* Botón de grupo activo (Servicios, Nosotros, etc.) */
-  .menu .dropdown > a.active{
-    background: #f4f6f4 !important;      /* fondo clarito */
-    color: #111 !important;
-    box-shadow: inset 0 -4px 0 #d3b81e;  /* franja dorada inferior */
-  }
-
-  /* Submenús */
-  .dropdown-menu{
-    position: relative !important;
-    background-color: #fff !important;   /* antes #111 */
-    border: 1px solid #e6e6e6;
-    border-top: none;
-    box-shadow: none;
-    min-width: 100%;
-    padding: 6px 0;
-  }
-  .dropdown-menu a{
-    color: #111 !important;
-    padding: 12px 16px;
-    display: block;
-  }
-  .dropdown-menu a:hover{
-    background: #d3b81e;
-    color: #fff !important;
-  }
-}
-
-/* ====== COMPACT NAV – OVERRIDES (pegar al FINAL del CSS) ====== */
-.main-nav{
-  height: 56px !important;      /* ↓ barra más delgada */
-  padding: 0 20px !important;
-  background-color: #000;        /* mantiene negro */
-}
-.logo{
-  max-height: 42px !important;   /* ↓ logo no empuja la altura */
-  width: auto;
-}
-
-/* Links del menú más compactos */
-.menu li{ margin-top: 0 !important; }
-.menu a{
-  padding: 10px 8px !important;  /* ↓ padding vertical */
-  margin-top: 0 !important;
-  line-height: 1 !important;
-}
-
-/* En pantallas grandes NO re-crecer */
-@media (min-width: 992px){
-  .main-nav{ height: 56px !important; padding: 0 24px !important; }
-  .logo{ max-height: 42px !important; }
-}
-
-/* Si quieres aún más fino en 1400+ */
-@media (min-width: 1400px){
-  .main-nav{ height: 56px !important; }
-  .logo{ max-height: 42px !important; }
-}
-/* ====== NAVBAR MÁS ALTO + LOGO MÁS GRANDE ====== */
-.main-nav{
-  height: 88px !important;      /* antes 56px o 68px */
-  padding: 0 28px !important;   /* un poco más de aire */
-}
-
-.logo{
-  max-height: 72px !important;  /* antes 42–56px */
-  width: auto;
-}
-
-/* Menú links centrados verticalmente */
-.menu a{
-  padding: 20px 10px !important;  /* más relleno vertical */
-  line-height: 1.2 !important;
-}
-
-/* ====== NAVBAR + LOGO AJUSTADO (versión final) ====== */
-.main-nav{
-  height: 96px !important;       /* negro un poco más alto */
-  padding: 0 28px !important; 
-  background-color: #000;
-}
-
-.logo{
-  max-height: 82px !important;   /* logo más grande */
+/* Logo */
+.logo {
+  max-height: 70px;
   width: auto;
   display: block;
-  object-fit: contain;
 }
 
-/* Menú alineado al centro vertical */
-.menu a{
-  padding: 22px 10px !important;
-  line-height: 1.2 !important;
+/* Menú */
+.menu {
+  list-style: none;
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  margin: 0;
+  margin-left: auto;
 }
 
-/* ===== Submenús más compactos (DESKTOP) ===== */
-@media (min-width: 992px){
-  .dropdown-menu{
-    min-width: 240px;        /* antes 280px */
-    padding: 6px 0;          /* menos relleno del panel */
-  }
-  .dropdown-menu li{
-    margin: 0;               /* elimina separación vertical extra */
-  }
-  .dropdown-menu a{
-    font-size: 0.95rem;      /* texto más chico */
-    padding: 10px 14px;      /* menos alto por opción */
-    line-height: 1.2;
-  }
-  /* Hover/activo mantiene contraste sin “engordar” */
-  .dropdown-menu li a:hover{
-    background-color: #d3b81e;
-    color: #fff;
-  }
+.menu li {
+  position: relative;
 }
 
-/* ==== Dropdown: hover amarillo a TODO el ancho ==== */
-.dropdown-menu{
-  padding: 0 !important;       /* quita el colchón del panel */
-  min-width: 240px;            /* el ancho que prefieras */
+.menu a {
+  color: #fff;
+  text-decoration: none;
+  padding: 18px 8px;
+  font-size: 1rem;
+  font-weight: 600;
 }
 
-.dropdown-menu li{
-  margin: 0 !important;        /* sin huecos entre items */
+.menu a.active {
+  border-bottom: 3px solid #d3b81e;
 }
 
-.dropdown-menu a{
-  display: block;               /* el <a> ocupa todo el ancho */
-  width: 100%;
-  padding: 12px 16px;           /* espacio interno del item */
-  color: #fff;                  /* color por defecto en panel oscuro */
-  line-height: 1.2;
-}
-
-/* Al pasar el mouse, el FONDO COMPLETO se pinta */
-.dropdown-menu li:hover > a,
-.dropdown-menu a:focus{
-  background: #d3b81e !important;
-  color: #111 !important;       /* o #fff si prefieres blanco sobre dorado */
-}
-
-/* (Opcional) separadores sutiles entre items */
-@media (min-width: 992px){
-  .dropdown-menu li + li a{
-    border-top: 1px solid rgba(255,255,255,.05);
-  }
-}
-
-/* ——— Submenú: tamaño y negrita ——— */
-.dropdown-menu a{
-  display:block;
-  padding: 14px 18px;          /* más alto/largo */
-  font-size: 1.05rem;          /* más grande */
-  font-weight: 700;            /* negrita */
-  color:#fff;                  /* en panel oscuro */
-  line-height:1.25;
-}
-
-/* Fondo por defecto del panel */
-.dropdown-menu{
-  background:#111;
-  min-width: 260px;
-  padding: 6px 0;
-}
-
-/* Separadores sutiles entre items */
-.dropdown-menu li + li a{
-  border-top: 1px solid rgba(255,255,255,.06);
-}
-
-/* ——— Estado ACTIVO (ruta actual) ——— */
-.dropdown-menu a.active-sub{
-  background:#d3b81e !important;
-  color:#111 !important;
-}
-
-/* ——— Hover SOLO si NO es la activa ——— */
-/* ——— Hover/Focus de items NO activos: fondo transparente, texto visible ——— */
-.dropdown-menu li:hover > a:not(.active-sub),
-.dropdown-menu a:hover:not(.active-sub),
-.dropdown-menu a:focus:not(.active-sub),
-.dropdown-menu a:focus-visible:not(.active-sub){
-  background: transparent !important;
-  color: #fff !important;   /* ← BLANCO para que se lea sobre el panel oscuro */
-}
-
-
-/* Evita “doble amarillo”: quita estilos heredados raros */
-.dropdown-menu li:hover > a.active-sub{
-  background:#d3b81e !important;
-  color:#111 !important;
-}
-
-/* Cotizar un poco más grande (solo desktop) */
-@media (min-width: 992px){
-  .main-nav .cotizar-btn{
-    padding: 14px 38px !important;  /* ↑ alto y ancho un poco */
-    font-size: 1.12rem !important;  /* texto apenas más grande */
-    border-radius: 10px !important; /* esquinas un poco más redondas */
-  }
-}
-
-/* Mantén el botón visible y alineado en móvil */
-@media (max-width: 768px){
-  .main-nav { display:flex; align-items:center; }
-  .menu-toggle{ order: 3; margin-left: 8px; }
-  .cotizar-btn{
-    order: 2;                 /* aparece antes de la hamburguesa */
-    padding: 10px 16px;
-    font-size: .95rem;
-    border-radius: 6px;
-    margin-left: auto;        /* lo empuja a la derecha */
-  }
-  .menu{ order: 4; }          /* el menú cae debajo cuando se abre */
-}
-
-/* Desktop: el tamaño que pediste */
-@media (min-width: 992px){
-  .main-nav .cotizar-btn{
-    padding: 14px 38px !important;
-    font-size: 1.12rem !important;
-    border-radius: 10px !important;
-  }
-}
-
-/* Botón Cotizar base */
+/* Botón Cotizar */
 .cotizar-btn {
   background-color: #d3b81e;
   color: #fff;
-  padding: 12px 30px;
-  font-size: 1.1rem;
+  padding: 10px 26px;
+  font-size: 1rem;
   border: none;
-  border-radius: 6px;
+  border-radius: 8px;
   cursor: pointer;
-  transition: all .3s ease;
-  font-family: inherit;
-  height: auto;
-  align-self: center;
-}
-.cotizar-btn:hover { background:#fff; color:#d3b81e; }
-
-/* Orden y visibilidad en móvil */
-@media (max-width: 768px){
-  .main-nav{ display:flex; align-items:center; }
-  .logo{ order:1; }
-  .cotizar-btn{ 
-    order:2; 
-    margin-left:auto;           /* pega el botón a la derecha del logo */
-    padding:10px 16px; 
-    font-size:.95rem; 
-    border-radius:6px; 
-  }
-  .menu-toggle{ order:3; margin-left:8px; }
-  .menu{ order:4; }             /* el menú cae debajo al abrirse */
+  font-weight: 700;
+  margin-left: 24px;
 }
 
-/* Un poco más grande en desktop (como pediste) */
-@media (min-width: 992px){
-  .main-nav .cotizar-btn{
-    padding: 14px 38px;
-    font-size: 1.12rem;
-    border-radius: 10px;
-  }
+.cotizar-btn:hover {
+  background-color: #fff;
+  color: #d3b81e;
 }
 
-/* === TELÉFONO: estilos como las referencias === */
-
-/* pill rojo (desktop) */
-.call-cta{
-  display:inline-flex;
-  align-items:center;
-  gap:10px;
-  background:#e53935;          /* rojo */
-  color:#fff !important;
-  padding:10px 16px;
-  border-radius:8px;            /* rectángulo con esquinas */
-  font-weight:700;
-  text-decoration:none !important;
-  line-height:1;
-  box-shadow: 0 2px 0 rgba(0,0,0,.12);
-  transition: transform .08s ease, background .2s ease;
-}
-.call-cta i{ font-size:14px; }
-.call-cta:hover{ background:#c62828; transform: translateY(-1px); }
-
-/* botón redondo (móvil) */
-.call-fab{
-  display:none;                 /* oculto en desktop */
-  width:36px;
-  height:36px;
-  min-width:36px;
-  border-radius:50%;
-  background:#e53935;
-  color:#fff !important;
-  align-items:center;
-  justify-content:center;
-  text-decoration:none !important;
-  line-height:1;
-  box-shadow: 0 2px 6px rgba(0,0,0,.18);
-}
-.call-fab i{ font-size:14px; }
-.call-fab:active{ transform: scale(.96); }
-
-/* alineación en la barra superior */
-.top-bar .contact-info{
-  display:flex;
-  align-items:center;
-  gap:12px;
-}
-
-/* Responsive: mostrar solo 1 variante */
-@media (max-width: 768px){
-  .call-cta{ display:none; }    /* en móvil, oculta el pill */
-  .call-fab{ display:inline-flex; }  /* muestra el redondo */
-}
-@media (min-width: 769px){
-  .call-cta{ display:inline-flex; }
-  .call-fab{ display:none; }
-}
-
-/* === PULSE WHATSAPP-LIKE PARA .call-fab (SOLO MÓVIL) === */
-.call-fab{
-  position: relative;          /* permite pseudo-elementos */
-  overflow: visible;
-}
-
-/* Círculos de halo */
-.call-fab::before,
-.call-fab::after{
-  content: "";
+/* Dropdown escritorio */
+.dropdown-menu {
   position: absolute;
-  inset: -10px;                /* halo alrededor */
-  border-radius: 50%;
-  background: #e53935;         /* mismo rojo del botón */
-  opacity: .22;
-  transform: scale(.7);
-  z-index: -1;
-  animation: fab-pulse 1.8s ease-out infinite;
+  top: 100%;
+  left: 0;
+  background: #111;
+  list-style: none;
+  margin: 0;
+  padding: 8px 0;
+  min-width: 260px;
+  display: none;
+  z-index: 1000;
 }
 
-/* Segundo anillo, más grande y desfasado */
-.call-fab::after{
-  inset: -18px;
-  opacity: .14;
-  animation-delay: .45s;
+.menu li:hover > .dropdown-menu {
+  display: block;
 }
 
-/* Animación del pulso */
-@keyframes fab-pulse{
-  0%   { transform: scale(.6); opacity: .28; }
-  60%  { transform: scale(1.35); opacity: 0; }
-  100% { transform: scale(1.55); opacity: 0; }
+.dropdown-menu a {
+  display: block;
+  padding: 10px 14px;
+  color: #fff;
+  font-size: .95rem;
 }
 
-/* Un poquito de feedback al tocar */
-.call-fab:active{
-  transform: scale(.95);
+.dropdown-menu a:hover {
+  background: #d3b81e;
+  color: #111;
 }
 
-/* Respeto a usuarios con reducción de movimiento */
-@media (prefers-reduced-motion: reduce){
-  .call-fab::before,
-  .call-fab::after{
-    animation: none;
-    opacity: 0;                /* sin halos si reducen animación */
+.dropdown-menu a.active-sub {
+  background: #d3b81e;
+  color: #111;
+}
+
+/* Hamburguesa hidden en desktop */
+.menu-toggle {
+  display: none;
+  background: none;
+  border: none;
+  color: #fff;
+  font-size: 28px;
+  cursor: pointer;
+  margin-left: 16px;
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 768px) {
+  .top-bar {
+    padding: 4px 12px;
+    font-size: 11px;
   }
-}
 
-/* Mantener que solo se vea en móvil */
-@media (max-width: 768px){
-  .call-cta{ display:none; }
-  .call-fab{ display:inline-flex; }
-}
-@media (min-width: 769px){
-  .call-cta{ display:inline-flex; }
-  .call-fab{ display:none; }
-}
+  .call-cta { display: none; }
+  .call-fab { display: inline-flex; }
 
-/* === CALL FAB con pulso visible (tipo WhatsApp) === */
-.call-fab{
-  display:none;                 /* se muestra solo en móvil más abajo */
-  width:40px;                   /* un pelín más grande para que luzca */
-  height:40px;
-  min-width:40px;
-  border-radius:50%;
-  background:#e53935;
-  color:#fff !important;
-  align-items:center;
-  justify-content:center;
-  text-decoration:none !important;
-  line-height:1;
-  position: relative;
-  z-index: 1;                   /* por encima del fondo de .top-bar */
-  box-shadow: 0 0 0 0 rgba(229,57,53,.45),
-              0 0 0 0 rgba(229,57,53,.25);
-  animation: call-ring 1.8s ease-out infinite;
-}
-.call-fab i{ font-size:16px; }
-.call-fab:active{ transform: scale(.95); }
-
-/* Animación: dos anillos que se expanden y se desvanecen */
-@keyframes call-ring{
-  0%{
-    box-shadow: 0 0 0 0 rgba(229,57,53,.45),
-                0 0 0 0 rgba(229,57,53,.25);
-  }
-  60%{
-    box-shadow: 0 0 0 16px rgba(229,57,53,0),
-                0 0 0 30px rgba(229,57,53,0);
-  }
-  100%{
-    box-shadow: 0 0 0 0 rgba(229,57,53,0),
-                0 0 0 0 rgba(229,57,53,0);
-  }
-}
-
-/* Respeto a reducción de movimiento */
-@media (prefers-reduced-motion: reduce){
-  .call-fab{ animation: none; box-shadow: none; }
-}
-
-/* Mostrar solo en móvil (como tenías) */
-@media (max-width: 768px){
-  .call-cta{ display:none; }
-  .call-fab{ display:inline-flex; }
-}
-@media (min-width: 769px){
-  .call-cta{ display:inline-flex; }
-  .call-fab{ display:none; }
-}
-
-/* === NAVBAR MÁS GRUESO === */
-.menu a{
-  font-weight: 700 !important;          /* negrita en items del menú */
-  letter-spacing: -0.1px;               /* compacta un pelín = se ve más sólido */
-}
-.menu .dropdown > a.active{
-  font-weight: 800 !important;          /* el activo aún más marcado */
-}
-.dropdown-menu a{
-  font-weight: 700 !important;          /* submenús en negrita */
-}
-
-/* Top bar (teléfono / email) más marcado sin exagerar */
-.top-bar,
-.contact-info .contact-link{
-  font-weight: 600 !important;
-}
-
-/* Botón Cotizar más contundente */
-.cotizar-btn{
-  font-weight: 800 !important;
-  letter-spacing: .2px;
-}
-
-/* === LOGO MÁS GRANDE EN DESKTOP === */
-@media (min-width: 992px) {
   .main-nav {
-    height: 110px !important; /* subimos un poco la altura */
-    padding: 0 32px !important;
+    padding: 0 12px;
+    height: 64px;
   }
 
-  .main-nav .logo {
-    max-height: 90px !important; /* antes 56–70px */
-    width: auto;
-    display: block;
-    object-fit: contain;
+  .logo {
+    max-height: 52px;
   }
 
-  /* Centra verticalmente el menú y botón Cotizar */
+  .menu-toggle {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .menu {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    flex-direction: column;
+    background: #fff;
+    border-top: 1px solid #eee;
+    display: none;
+    padding: 8px 0;
+  }
+
+  .menu.open {
+    display: flex;
+  }
+
+  .menu li {
+    width: 100%;
+  }
+
   .menu a {
-    padding: 30px 10px !important; /* para que el texto quede alineado con el logo */
+    color: #111;
+    padding: 12px 16px;
   }
 
-  .main-nav .cotizar-btn {
-    padding: 14px 36px !important;
-    font-size: 1.1rem !important;
+  .menu a.active {
+    border-bottom: none;
+    background: #f4f4f4;
   }
-}
 
-/* === LOGO GRANDE TAMBIÉN EN TABLET === */
-@media (min-width: 768px) and (max-width: 991px) {
-  .main-nav {
-    height: 100px !important;
+  .dropdown-menu {
+    position: static;
+    background: #fff;
+    border: 1px solid #eee;
+    border-top: none;
+    padding: 0;
+    min-width: 100%;
   }
-  .main-nav .logo {
-    max-height: 80px !important;
+
+  .dropdown-menu a {
+    color: #111;
   }
-}
 
-/* === SOLO AGRANDAR EL LOGO, SIN MODIFICAR NAVBAR === */
-.logo {
-  max-height: 70px !important; /* 🔼 ajusta según tu gusto (ej. 65–75) */
-  width: auto;
-  transition: all 0.2s ease;
-}
+  .cotizar-btn {
+    margin-left: auto;
+    padding: 8px 14px;
+    font-size: .9rem;
+  }
 
-/* Mantener la altura original del navbar */
-.main-nav {
-  height: 68px !important; /* la misma altura que tenías antes */
-  padding: 0 24px !important;
-  background-color: #000;
-  display: flex;
-  align-items: center;
-}
+  .menu-toggle {
+    margin-left: 8px;
+  }
 
-/* Mueve el navbar un poco hacia abajo respecto a la top-bar */
-.main-nav{
-  margin-top: 10px !important;      /* prueba 8–12px */
-}
-
-@media (max-width: 768px){
-  .main-nav{ margin-top: 6px !important; }
+  .menu.open + .cotizar-btn {
+    width: 90%;
+    margin: 10px auto 12px;
+    text-align: center;
+  }
 }
