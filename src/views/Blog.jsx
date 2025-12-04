@@ -49,15 +49,7 @@ export const articulos = [
     categoria: 'Artículos',
     contenido: `La ingeniería de izajes se encarga del cálculo, seguridad y planificación de maniobras con cargas pesadas. Es clave en sectores como minería, energía y construcción...`
   },
-  {
-    id: 5,
-    titulo: 'Servicio de Grúas Telescópicas en Lima',
-    resumen: 'La solución perfecta para levantar estructuras pesadas en obra […]',
-    fecha: '09/05/2023',
-    imagen: blog5,
-    categoria: 'Artículos',
-    contenido: `En Lima, el servicio de grúas telescópicas es esencial para edificaciones de gran altura y estructuras metálicas. Ofrecemos equipos modernos con operadores calificados...`
-  },
+ 
   {
     id: 6,
     titulo: 'Izaje de Cargas: Seguridad y Eficiencia',
