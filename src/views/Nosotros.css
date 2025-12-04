@@ -1,0 +1,893 @@
+.nosotros-container {
+  padding: 0;
+  margin: 0;
+  font-family: 'Segoe UI', sans-serif;
+
+  opacity: 0;
+  animation: fadeIn 1s ease-in forwards;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+/* HISTORIA */
+.historia-section {
+  padding: 100px 20px 80px;
+  display: flex;
+  justify-content: center;
+}
+
+.historia-content {
+  display: flex;
+  align-items: center;
+  gap: 50px;
+  max-width: 1200px;
+  flex-wrap: wrap;
+}
+
+.historia-img-wrapper {
+  position: relative;
+  max-width: 500px;
+  width: 100%;
+}
+
+.historia-img-wrapper img {
+  width: 100%;
+  height: auto;
+  border-radius: 0;
+  position: relative;
+  z-index: 2;
+}
+
+.green-border {
+  position: absolute;
+  top: -20px;
+  left: -20px;
+  width: 100%;
+  height: 100%;
+  border-left: 40px solid #d3b81e;
+  border-bottom: 40px solid #d3b81e;
+  z-index: 1;
+}
+
+.text {
+  flex: 1;
+  max-width: 600px;
+  text-align: left;
+}
+
+.text h2 {
+  font-size: 36px;
+  font-weight: 800;
+  margin-bottom: 20px;
+  font-family: 'Arial Black', sans-serif;
+}
+
+.text p {
+  margin-bottom: 15px;
+  font-size: 17px;
+  line-height: 1.6;
+}
+
+
+/* MISIÓN Y VISIÓN */
+.mision-vision-section {
+  padding: 100px 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 80px; /* espacio entre misión y visión */
+}
+
+.mision-vision-card {
+  background-color: #fff;
+  border-left: 14px solid #d3b81e;
+  padding: 40px 60px;
+  border-radius: 12px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  max-width: 1000px; /* MISMO ANCHO para ambas */
+  display: flex;
+  align-items: flex-start;
+  gap: 25px;
+
+  /* animación */
+  opacity: 0;
+  transform: translateY(20px);
+  animation: cardFade 0.8s ease-out forwards;
+}
+
+@keyframes cardFade {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.mision-vision-card:nth-child(1) { animation-delay: 0.4s; }
+.mision-vision-card:nth-child(2) { animation-delay: 0.6s; }
+
+.mision-vision-card i {
+  font-size: 38px;
+  color: #d3b81e;
+  margin-top: 5px;
+}
+
+.text-content {
+  text-align: left;
+  flex: 1;
+}
+
+.text-content h2 {
+  font-size: 28px;
+  font-weight: 800;
+  margin-bottom: 10px;
+}
+
+.text-content p {
+  font-size: 18px;
+  line-height: 1.7;
+  margin: 0;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .mision-vision-card {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 30px;
+  }
+
+  .text-content {
+    text-align: left;
+  }
+}
+
+/* VALORES */
+.valores-section {
+  background-color: #f5f5f5;
+  padding: 50px 20px;
+  text-align: center;
+}
+
+.valores-section h2 {
+  font-size: 32px;
+  font-weight: bold;
+  margin-bottom: 40px;
+  color: #1e1e1e;
+}
+
+/* GRILLA: 5 columnas fijas en una sola línea */
+.valores-grid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr); /* Fuerza 5 columnas */
+  gap: 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+  overflow: hidden; /* Quita el scroll horizontal */
+}
+
+/* CUADROS MÁS PEQUEÑOS */
+.valor-cuadro {
+  background-color: #d3b81e;
+  color: white;
+  padding: 25px 10px;
+  border-radius: 6px;
+  transition: background-color 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  /* animación */
+  opacity: 0;
+  transform: scale(0.9);
+  animation: valoresFade 0.6s ease-out forwards;
+}
+
+@keyframes valoresFade {
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.valor-cuadro:nth-child(1) { animation-delay: 0.3s; }
+.valor-cuadro:nth-child(2) { animation-delay: 0.5s; }
+.valor-cuadro:nth-child(3) { animation-delay: 0.7s; }
+.valor-cuadro:nth-child(4) { animation-delay: 0.9s; }
+.valor-cuadro:nth-child(5) { animation-delay: 1.1s; }
+
+.valor-cuadro:hover {
+  background-color: #000000;
+}
+
+.valor-cuadro i {
+  font-size: 24px;
+  margin-bottom: 10px;
+}
+
+.valor-cuadro p {
+  font-size: 14px;
+  font-weight: bold;
+  line-height: 1.3;
+}
+
+/* CSS BANNER */
+.nosotros-banner {
+  background-image: url('../assets/banner-nosotros.jpg');
+  background-size: cover;
+  background-position: center;
+  height: 850px; /* Igual que Proyectos */
+  position: relative;
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+  color: white;
+  text-align: left;
+  overflow: hidden;
+  margin-bottom: 0;
+  border-bottom: none;
+
+  animation: heroSlide 1s ease-out forwards;
+  opacity: 0;
+  transform: translateY(30px);
+}
+
+@keyframes heroSlide {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.overlay-nosotros {
+  z-index: 2;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  height: 100%;
+  text-align: left;
+  padding-left: 120px; /* 👈 Consistencia con Proyectos */
+  padding-right: 20px;
+  box-sizing: border-box;
+  width: 100%;
+}
+
+.filtro-oscuro {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5); /* ⬅️ oscurecimiento */
+  z-index: 1;
+}
+
+
+.texto-nosotros {
+  color: white;
+  margin-left: 0;
+  max-width: 600px;
+
+  /* animación */
+  opacity: 0;
+  transform: translateX(-40px);
+  animation: contentSlide 1s ease-out forwards;
+  animation-delay: 0.3s;
+}
+
+@keyframes contentSlide {
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.texto-nosotros h1 {
+  font-size: 48px;
+  font-weight: 900;
+  border-left: 6px solid #d3b81e;
+  padding-left: 10px;
+  margin-bottom: 15px;
+  font-family: 'Bebas Neue', sans-serif; /* o cambia por Arial si no usas Bebas Neue */
+}
+
+.texto-nosotros p {
+  font-size: 18px;
+  margin-left: 16px;
+}
+
+
+
+body, html {
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden; /* Evita scroll lateral */
+}
+
+@media (max-width: 768px) {
+  .nosotros-banner {
+    height: 250px;
+  }
+
+  .texto-nosotros h1 {
+    font-size: 28px;
+  }
+
+  .texto-nosotros p {
+    font-size: 14px;
+  }
+
+  .overlay-nosotros {
+    padding-left: 30px;
+    padding-right: 20px;
+  }
+}
+
+/* ===========================
+   VALORES (responsive + scroll)
+   =========================== */
+.valores-section{
+  background:#ffffff;
+  padding: 50px 20px;
+  text-align:center;
+}
+.valores-section h2{
+  font-size: clamp(24px, 4.5vw, 32px);
+  font-weight: 800;
+  margin-bottom: 32px;
+  color:#1e1e1e;
+}
+
+/* Desktop: 5 columnas */
+.valores-grid{
+  display:grid;
+  grid-template-columns: repeat(5, minmax(180px, 1fr));
+  gap: 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Tarjetas */
+.valor-cuadro{
+  background:#d8c00e;
+  color:#313131;
+  padding: 24px 14px;
+  border-radius: 8px;
+  transition: background .25s ease;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  justify-content:center;
+  min-height: 190px;
+  text-align:center;
+
+  /* animación ligera (opcional) */
+  opacity: 0;
+  transform: scale(.96);
+  animation: valoresFade .45s ease-out forwards;
+}
+@keyframes valoresFade { to{ opacity:1; transform:scale(1);} }
+
+.valor-cuadro i{ font-size: 26px; margin-bottom: 10px; }
+.valor-cuadro h3{ font-size: clamp(16px, 2.6vw, 18px); margin: 6px 0 8px; }
+.valor-cuadro p{
+  font-size: clamp(13px, 2.5vw, 14px);
+  font-weight: 700;
+  line-height: 1.35;
+  margin: 0;
+}
+
+/* -------- Breakpoints -------- */
+
+/* === VALORES: móvil — 1 tarjeta exacta por pantalla, todas igual de altas === */
+@media (max-width: 768px){
+  /* sin padding lateral para que no “asome” la siguiente */
+  .valores-section{ padding: 40px 0; }
+
+  .valores-grid{
+    display: flex;                 /* carrusel */
+    overflow-x: auto;              /* deslizable */
+    scroll-snap-type: x mandatory; /* se ancla por tarjeta */
+    gap: 0;
+    padding: 0;
+    width: 100%;
+
+    /* ocultar la barra (rayita) */
+    scrollbar-width: none;     /* Firefox */
+    -ms-overflow-style: none;  /* IE/Edge legacy */
+  }
+  .valores-grid::-webkit-scrollbar{ display:none; } /* Chrome/Safari */
+
+  .valor-cuadro{
+    flex: 0 0 100%;            /* 👈 1 tarjeta = 100% del contenedor */
+    min-height: 230px;         /* mismo alto para TODAS */
+    scroll-snap-align: start;
+    scroll-snap-stop: always;
+  }
+}
+
+/* ==== VALORES — estilo de tarjeta (común) ==== */
+.valor-cuadro{
+  border-radius: 12px;
+  box-shadow: 0 8px 20px rgba(0,0,0,.08);
+  transition: background-color .25s ease, color .25s ease,
+              transform .25s ease, box-shadow .25s ease;
+  cursor: default;
+}
+
+/* Hover (desktop) y foco accesible */
+.valor-cuadro:hover,
+.valor-cuadro:focus-visible{
+  background:#000;
+  transform: translateY(-4px);
+  box-shadow: 0 14px 28px rgba(0,0,0,.25);
+}
+
+/* Tap (móvil) */
+.valor-cuadro:active{
+  background:#000;
+  transform: scale(.98);
+  box-shadow: 0 10px 22px rgba(0,0,0,.22);
+}
+
+/* Mantén los textos legibles en el estado activo/hover */
+.valor-cuadro h3, .valor-cuadro p, .valor-cuadro i{ color:#d42f50; }
+
+/* ==== VALORES — móvil: 1 tarjeta exacta por pantalla, con margen en los 4 bordes y SIN scrollbar ==== */
+@media (max-width: 768px){
+  .valores-section{ padding: 40px 0; }          /* un poco más compacto */
+
+  .valores-grid{
+    display: flex;
+    overflow-x: auto;                           /* deslizable */
+    scroll-snap-type: x mandatory;
+    gap: 0;                                     /* que no “asome” la siguiente */
+    padding: 0;                                 /* sin padding del contenedor */
+    -webkit-overflow-scrolling: touch;
+    /* ocultar scrollbar (“rayita”) */
+    scrollbar-width: none;                      /* Firefox */
+    -ms-overflow-style: none;                   /* IE/Edge legacy */
+  }
+  .valores-grid::-webkit-scrollbar{ display: none; } /* Chrome/Safari */
+
+  .valor-cuadro{
+    flex: 0 0 auto;                             /* respeta el ancho real */
+    width: calc(100% - 40px);                   /* 👈 tarjeta más pequeña que la pantalla */
+    margin: 12px 20px;                          /* 👈 margen en los 4 lados (no se ve la siguiente) */
+    min-height: 220px;                          /* mismas alturas */
+    scroll-snap-align: start;
+    scroll-snap-stop: always;
+  }
+}
+
+/* Un pelín más compacto en pantallas muy chicas */
+@media (max-width: 420px){
+  .valor-cuadro{ min-height: 210px; margin: 10px 18px; width: calc(100% - 36px); }
+}
+
+/* === MÓVIL: bajar más la imagen del banner de Nosotros === */
+@media (max-width: 768px){
+  .nosotros-banner{
+    height: 300px;                 /* antes 250px → muestra más imagen */
+    background-position: center 75%; /* mueve el foco hacia abajo */
+  }
+
+  /* opcional: si quieres el texto un pelín más abajo también */
+  .overlay-nosotros{
+    padding-top: 110px;            /* ajusta 100–130 a tu gusto */
+  }
+}
+
+/* === NOSOTROS — móvil: imagen arriba y texto a la izquierda (como Blog/Contacto) === */
+@media (max-width: 768px){
+  .nosotros-banner{
+    height: 300px;                               /* alto cómodo en móvil */
+    background-position: center 12% !important;  /* ↑ sube el encuadre de la imagen */
+    margin-top: 0 !important;
+    position: relative;
+    top: -1px;                                   /* por si aparece una “rayita” blanca debajo del header */
+  }
+
+  .overlay-nosotros{
+    justify-content: flex-start !important;      /* texto arriba */
+    align-items: flex-start !important;          /* a la izquierda */
+    padding: 96px 12px 16px 12px !important;     /* top right bottom left */
+    text-align: left;
+  }
+
+  .texto-nosotros{
+    margin-left: 0 !important;                   /* pegado al borde izquierdo */
+    max-width: 600px;
+  }
+  .texto-nosotros h1{ font-size: 32px; margin-bottom: 8px; }
+  .texto-nosotros p { font-size: 14px; margin-left: 12px; }
+}
+
+
+/* ===== NOSOTROS — COMPACTO EN MÓVIL PARA DESTACAR EL BANNER ===== */
+@media (max-width: 768px){
+
+  /* Banner más protagonista */
+  .nosotros-banner{
+    height: 320px;                           /* ↑ más alto que 250px */
+    background-position: center 18% !important;
+  }
+  .filtro-oscuro{ background-color: rgba(0,0,0,.55); }  /* oscurece un poco más */
+  .overlay-nosotros{
+    padding: 104px 12px 16px 12px !important; /* texto un poco más abajo */
+  }
+  .texto-nosotros h1{ font-size: 30px; margin-bottom: 8px; }
+  .texto-nosotros p { font-size: 13.5px; margin-left: 10px; }
+
+  /* HISTORIA: menos aire y elementos más chicos */
+  .historia-section{ padding: 36px 16px 24px; }
+  .historia-content{ gap: 18px; }
+  .historia-img-wrapper{ max-width: 100%; }
+  .historia-img-wrapper img{ max-height: 200px; object-fit: cover; }
+  .green-border{
+    top: -12px; left: -12px;
+    border-left: 20px solid #d3b81e;        /* ↓ grosor */
+    border-bottom: 20px solid #d3b81e;
+  }
+  .text h2{ font-size: 24px; margin-bottom: 8px; }
+  .text p { font-size: 14px; line-height: 1.5; margin-bottom: 10px; }
+
+  /* MISIÓN / VISIÓN: tarjetas más compactas */
+  .mision-vision-section{ padding: 40px 16px; gap: 20px; }
+  .mision-vision-card{
+    padding: 18px 16px;
+    border-left: 10px solid #d3b81e;
+    border-radius: 10px;
+    gap: 12px;
+    box-shadow: 0 2px 10px rgba(0,0,0,.08);
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .mision-vision-card i{ font-size: 28px; margin-top: 0; }
+  .text-content h2{ font-size: 22px; margin-bottom: 6px; }
+  .text-content p { font-size: 14.5px; line-height: 1.55; }
+
+  /* VALORES: un poco más compacto que tu versión móvil actual */
+  .valores-section{ padding: 32px 0; }
+  .valor-cuadro{
+    min-height: 200px;
+    padding: 20px 12px;
+  }
+  .valor-cuadro i{ font-size: 22px; margin-bottom: 8px; }
+  .valor-cuadro h3{ font-size: 16px; }
+  .valor-cuadro p { font-size: 13px; }
+
+  /* Ajustes generales para que nada “empuje” al banner */
+  .nosotros-container section{ margin-bottom: 20px; }
+}
+
+/* AÚN MÁS COMPACTO EN TELÉFONOS PEQUEÑOS */
+@media (max-width: 420px){
+  .nosotros-banner{ height: 335px; }          /* un pelín más alto en phones chicos */
+  .texto-nosotros h1{ font-size: 28px; }
+  .texto-nosotros p { font-size: 13px; }
+
+  .historia-img-wrapper img{ max-height: 180px; }
+  .mision-vision-card{ padding: 16px 14px; }
+  .text-content p{ font-size: 14px; }
+
+  .valor-cuadro{ min-height: 190px; padding: 18px 10px; }
+}
+
+
+/* ===== NOSOTROS — ULTRA COMPACTO EN MÓVIL (destacar banner) ===== */
+@media (max-width: 768px){
+
+  /* Banner más protagonista */
+  .nosotros-banner{
+    height: 340px;                           /* ↑ más alto */
+    background-position: center 18% !important;
+  }
+  .filtro-oscuro{ background-color: rgba(0,0,0,.58); }
+  .overlay-nosotros{ padding: 106px 12px 18px 12px !important; }
+  .texto-nosotros h1{ font-size: 30px; margin-bottom: 6px; }
+  .texto-nosotros p { font-size: 13px; margin-left: 10px; }
+
+  /* HISTORIA (más pequeño) */
+  .historia-section{ padding: 24px 14px 18px; }
+  .historia-content{ gap: 12px; }
+  .historia-img-wrapper{ max-width: 100%; }
+  .historia-img-wrapper img{ max-height: 165px; object-fit: cover; }
+  .green-border{
+    top: -8px; left: -8px;
+    border-left: 14px solid #d3b81e;
+    border-bottom: 14px solid #d3b81e;
+  }
+  .text{ max-width: 100%; }
+  .text h2{
+    font-size: 20px;               /* ↓ título principal */
+    font-weight: 800;
+    line-height: 1.15;
+    margin: 6px 0 8px;
+  }
+  .text p{
+    font-size: 13px;               /* ↓ párrafos */
+    line-height: 1.45;
+    margin: 6px 0;
+  }
+
+  /* MISIÓN / VISIÓN (tarjetas compactas) */
+  .mision-vision-section{ padding: 24px 14px; gap: 14px; }
+  .mision-vision-card{
+    padding: 14px 14px;
+    border-left: 8px solid #d3b81e;
+    border-radius: 8px;
+    gap: 10px;
+    box-shadow: 0 2px 8px rgba(0,0,0,.08);
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .mision-vision-card i{ font-size: 24px; margin-top: 0; }
+  .text-content h2{ font-size: 18px; margin: 0 0 6px; }
+  .text-content p { font-size: 13px; line-height: 1.5; }
+
+  /* VALORES (más pequeño) */
+  .valores-section{ padding: 28px 0; }
+  .valor-cuadro{
+    min-height: 170px;
+    padding: 16px 10px;
+  }
+  .valor-cuadro i{ font-size: 20px; }
+  .valor-cuadro h3{ font-size: 15px; }
+  .valor-cuadro p { font-size: 12.5px; line-height: 1.4; }
+
+  /* Separación general entre secciones (menos) */
+  .nosotros-container section{ margin-bottom: 16px; }
+}
+
+/* Extra compacto en teléfonos muy pequeños */
+@media (max-width: 420px){
+  .nosotros-banner{ height: 350px; }
+  .texto-nosotros h1{ font-size: 28px; }
+  .texto-nosotros p { font-size: 12.5px; }
+
+  .historia-img-wrapper img{ max-height: 150px; }
+  .text h2{ font-size: 19px; }
+  .text p { font-size: 12.5px; }
+
+  .mision-vision-card{ padding: 12px; }
+  .text-content h2{ font-size: 17px; }
+  .text-content p { font-size: 12.5px; }
+
+  .valor-cuadro{ min-height: 160px; padding: 14px 8px; }
+}
+
+/* ===== MÓVIL: mejorar legibilidad bajo el banner (sección HISTORIA) ===== */
+@media (max-width: 768px){
+
+  /* un poco de aire respecto al banner */
+  #historia{
+    margin-top: 14px !important;
+  }
+
+  /* apila y controla la separación de los bloques */
+  #historia .historia-content{
+    flex-direction: column;
+    gap: 14px;                    /* separación uniforme imagen/texto */
+  }
+
+  /* separa la imagen del título */
+  #historia .historia-img-wrapper{
+    margin-bottom: 12px;          /* evita que el título “se pegue” */
+  }
+
+  /* acolchado lateral para que no quede al ras */
+  #historia .text{
+    padding: 2px 10px 0;
+    max-width: 100%;
+  }
+
+  /* título con respiro arriba/abajo */
+  #historia .text h2{
+    font-size: 20px;
+    line-height: 1.2;
+    letter-spacing: .2px;
+    margin: 6px 0 10px;           /* espacio encima y debajo del h2 */
+  }
+
+  /* párrafos más legibles y ordenados */
+  #historia .text p{
+    font-size: 13.5px;
+    line-height: 1.6;             /* más aire entre líneas */
+    margin: 8px 0 10px;           /* separación entre párrafos */
+    text-align: justify;          /* look más profesional */
+    text-justify: inter-word;
+    hyphens: auto;                /* cortes correctos de palabras */
+    -webkit-hyphens: auto;
+    -ms-hyphens: auto;
+    word-break: normal;
+  }
+
+  /* asegura separación incluso si algún estilo pisa márgenes */
+  #historia .text p + p{ margin-top: 8px; }
+
+  /* último párrafo sin “cola” extra */
+  #historia .text p:last-child{ margin-bottom: 0; }
+}
+
+/* ===== VALORES — MÓVIL: CENTRADO PERFECTO (sin scroll) ===== */
+@media (max-width: 768px){
+  .valores-grid{
+    display: grid !important;
+    grid-template-columns: 1fr !important;
+    justify-items: center !important;
+    overflow: visible !important;
+    gap: 16px;
+    padding: 0 16px !important;
+    margin: 0 auto !important;
+    max-width: 600px; /* ancho del bloque */
+  }
+  .valor-cuadro{
+    /* ancho centrado con aire simétrico a los lados */
+    width: min(520px, calc(100% - 32px)) !important;
+    margin: 12px auto !important;
+    flex: initial !important;   /* cancela el flex del carrusel */
+  }
+}
+
+/* ===== VALORES — MÓVIL: CENTRADO + COMPACTO ===== */
+@media (max-width: 768px){
+  .valores-section{
+    padding: 24px 0 20px;
+  }
+  .valores-section h2{
+    font-size: 24px;            /* título más pequeño */
+    margin-bottom: 18px;
+  }
+  .valores-grid{
+    display: grid !important;
+    grid-template-columns: 1fr !important;
+    justify-items: center !important;
+    gap: 14px;
+    padding: 0 12px !important;
+    margin: 0 auto !important;
+    max-width: 520px;
+  }
+  .valor-cuadro{
+    width: min(420px, calc(100% - 28px)) !important; /* ↓ ancho */
+    min-height: 150px;                                /* ↓ alto */
+    padding: 14px 12px;                               /* ↓ padding */
+    border-radius: 10px;
+    margin: 10px auto !important;
+    box-shadow: 0 6px 14px rgba(0,0,0,.08);
+  }
+  .valor-cuadro i{ font-size: 20px; margin-bottom: 6px; }
+  .valor-cuadro h3{ font-size: 16px; margin: 4px 0 6px; }
+  .valor-cuadro p { font-size: 12.5px; line-height: 1.4; }
+}
+
+/* Teléfonos muy pequeños */
+@media (max-width: 420px){
+  .valor-cuadro{
+    width: calc(100% - 24px) !important;
+    min-height: 140px;
+    padding: 12px 10px;
+  }
+  .valor-cuadro h3{ font-size: 15px; }
+  .valor-cuadro p { font-size: 12px; }
+}
+
+/* ===== VALORES — MÓVIL: CENTRADO AL PÍXEL + COMPACTO ===== */
+@media (max-width: 768px){
+  .valores-section{ padding: 24px 0 18px; }
+
+  /* Contenedor centrado (ancho fijo y simétrico) */
+  .valores-grid{
+    display: block !important;
+    box-sizing: border-box;
+    width: 100% !important;
+    max-width: 440px !important;     /* ajusta 400–460px si quieres */
+    margin: 0 auto !important;       /* centra el contenedor */
+    padding: 0 14px !important;      /* aire lateral igual a ambos lados */
+    transform: none !important;      /* cancela cualquier translate previo */
+    overflow: visible !important;
+    gap: 0 !important;
+  }
+
+  /* Tarjeta ocupa TODO el ancho del contenedor */
+  .valor-cuadro{
+    box-sizing: border-box;
+    width: 100% !important;
+    min-height: 150px;
+    padding: 14px 12px;
+    margin: 12px 0 !important;       /* sólo margen vertical */
+    border-radius: 10px;
+    box-shadow: 0 6px 14px rgba(0,0,0,.08);
+  }
+  .valor-cuadro i{ font-size: 20px; margin-bottom: 6px; }
+  .valor-cuadro h3{ font-size: 16px; margin: 4px 0 6px; }
+  .valor-cuadro p { font-size: 12.5px; line-height: 1.4; }
+}
+
+/* Desktop: por si acaso, asegúrate de que el grid esté centrado */
+@media (min-width: 769px){
+  .valores-grid{ margin-left: auto; margin-right: auto; transform: none !important; }
+}
+
+/* NOSOTROS — móvil: texto más ABAJO en el banner */
+@media (max-width: 768px){
+  .nosotros-banner{
+    height: 400px !important;                 /* algo más alto para que quepa */
+    background-position: center 26% !important;
+  }
+
+  .overlay-nosotros{
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: flex-start !important;       /* izquierda */
+    justify-content: flex-start !important;
+    height: 100% !important;
+    padding: 0 12px 34px 12px !important;     /* empuja el bloque hacia ABAJO */
+    text-align: left !important;
+  }
+
+  /* truco: lleva el bloque al fondo del banner */
+  .texto-nosotros{
+    margin-left: 0 !important;
+    margin-top: auto !important;              /* pega abajo */
+    margin-bottom: 0 !important;
+    max-width: 92%;
+  }
+
+  .texto-nosotros h1{ font-size: 30px; margin-bottom: 6px; }
+  .texto-nosotros p { font-size: 13.5px; margin-left: 12px; }
+}
+
+/* === OVERRIDES: 6 columnas en una sola fila (desktop) === */
+@media (min-width: 1024px){
+  .valores-grid{
+    display: grid !important;
+    grid-template-columns: repeat(6, minmax(160px, 1fr)) !important;
+    gap: 20px !important;
+    max-width: 1400px !important;   /* más ancho para que quepan cómodos */
+    margin: 0 auto !important;
+    overflow: visible !important;    /* evita que recorte o “empuje” */
+  }
+
+  .valor-cuadro{
+    min-height: 190px;               /* mantén altura pareja */
+  }
+}
+
+/* === VALORES: textos en blanco y más gruesos === */
+.valor-cuadro h3,
+.valor-cuadro p,
+.valor-cuadro i{
+  color: #fff !important;       /* blanco en icono, título y párrafo */
+}
+
+/* Pesos más fuertes */
+.valor-cuadro h3{
+  font-weight: 800 !important;  /* título bien marcado */
+  letter-spacing: .2px;
+}
+.valor-cuadro p{
+  font-weight: 700 !important;  /* párrafo en negrita */
+}
+
+/* Mantener blanco también en hover/focus (sobrescribe reglas previas) */
+.valor-cuadro:hover h3,
+.valor-cuadro:hover p,
+.valor-cuadro:hover i,
+.valor-cuadro:focus-visible h3,
+.valor-cuadro:focus-visible p,
+.valor-cuadro:focus-visible i{
+  color: #fff !important;
+}
+
+/* (Opcional) Mejora de legibilidad sobre fondo amarillo */
+.valor-cuadro h3,
+.valor-cuadro p{
+  text-shadow: 0 1px 2px rgba(0,0,0,.25);
+}

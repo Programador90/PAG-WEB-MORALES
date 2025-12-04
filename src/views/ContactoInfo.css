@@ -1,0 +1,279 @@
+/* HERO con imagen */
+.contacto-hero {
+  margin-top: 45px;
+  height: 800px;
+  background-image: url('../assets/contacto-hero.jpg');
+  background-size: cover;
+  background-position: center;
+  position: relative;
+
+  opacity: 0;
+  transform: translateY(30px);
+  animation: heroSlide 1s ease-out forwards;
+}
+
+@keyframes heroSlide {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.overlay-contacto {
+  background: rgba(0, 0, 0, 0.5);
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+}
+
+.texto-hero-contacto {
+  color: white;
+  margin-left: 60px;
+  max-width: 600px;
+
+  opacity: 0;
+  transform: translateX(-40px);
+  animation: contentSlide 1s ease-out forwards;
+  animation-delay: 0.3s; /* ⏱ entra un poquito después */
+}
+
+@keyframes contentSlide {
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.texto-hero-contacto h1 {
+  font-size: 48px;
+  font-weight: 900;
+  border-left: 6px solid #d3b81e;
+  padding-left: 10px;
+  margin-bottom: 15px;
+}
+
+.texto-hero-contacto p {
+  font-size: 16px;
+  margin-left: 16px;
+}
+
+/* TÍTULO */
+.titulo-contacto {
+  text-align: center;
+  font-size: 2.5rem; /* tamaño igual al de COTIZA... */
+  font-weight: 900;
+  margin: 100px 0 60px;
+  font-family: 'Bebas Neue', sans-serif; /* opcional: para igualar estilo si usas fuente similar abajo */
+}
+
+
+.titulo-contacto .verde {
+  color: #d3b81e;
+}
+
+/* CONTENEDOR GENERAL */
+.contacto-info-container {
+  padding: 0 20px 60px;
+  max-width: 1200px;
+  margin: 0 auto;
+
+  opacity: 0;
+  animation: fadeIn 1s ease-in forwards;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+/* CUADROS DE CONTACTO */
+.info-boxes {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+  flex-wrap: wrap;
+  margin-bottom: 60px;
+}
+
+.info-box {
+  background-color: #d3b81e;
+  color: white;
+  flex: 1;
+  min-width: 300px;
+  max-width: 360px;
+  height: 160px;
+  padding: 25px 20px;
+  text-align: left;
+  border-radius: 0; /* BORDES CUADRADOS */
+  transition: all 0.3s ease;
+  box-shadow: 0 0 0 transparent;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.info-box:hover {
+  background-color: black;
+  color: #d3b81e;
+  transform: translateY(-5px);
+  box-shadow: 0px 10px 25px rgba(0, 0, 0, 0.3);
+}
+
+/* ÍCONOS */
+.icono-contacto {
+  font-size: 24px;
+  margin-bottom: 10px;
+  color: #fff;
+  transition: color 0.3s ease;
+}
+
+.info-box:hover .icono-contacto {
+  color: #d3b81e;
+}
+
+.info-box h3 {
+  margin-bottom: 8px;
+  font-size: 1rem;
+  border-bottom: 1px solid white;
+  padding-bottom: 6px;
+}
+
+.info-box p {
+  margin: 4px 0;
+  font-size: 14px;
+}
+
+/* === CONTACTO — móvil: imagen más arriba y texto a la izquierda === */
+@media (max-width: 768px){
+  .contacto-hero{
+    height: 300px;                 /* alto cómodo en móvil */
+    background-position: center 18%;/* ↑ sube la imagen del banner */
+  }
+
+  .overlay-contacto{
+    align-items: flex-start;        /* texto arriba a la izquierda */
+    padding: 110px 16px 16px 18px;  /* top right bottom left */
+  }
+
+  .texto-hero-contacto{
+    margin-left: 0 !important;      /* pegado al borde izquierdo */
+    max-width: 600px;
+  }
+  .texto-hero-contacto h1{
+    font-size: 32px;
+    margin-bottom: 8px;
+  }
+  .texto-hero-contacto p{
+    font-size: 14px;
+    margin-left: 12px;              /* si lo quieres aún más a la izquierda, pon 8px o 0 */
+  }
+}
+
+/* === CONTACTO — FIX móvil === */
+@media (max-width: 768px){
+  .contacto-hero{
+    height: 320px;                  /* un poco más alto para que no “corte” */
+    background-position: center 10%;/* ↑ sube la imagen del banner */
+    margin-bottom: 16px;            /* separa del contenido de abajo */
+  }
+
+  .overlay-contacto{
+    align-items: flex-start;        /* texto arriba a la izquierda */
+    justify-content: flex-start;
+    padding: 96px 12px 14px 12px;   /* top right bottom left */
+    box-sizing: border-box;
+  }
+
+  .texto-hero-contacto{
+    margin-left: 0 !important;      /* pegado al borde izquierdo */
+    max-width: 560px;
+  }
+  .texto-hero-contacto h1{
+    font-size: 32px;
+    margin-bottom: 8px;
+  }
+  .texto-hero-contacto p{
+    font-size: 14px;
+    margin-left: 12px;              /* pon 0 si lo quieres totalmente al filo */
+  }
+}
+
+/* === CONTACTO — cubrir la línea blanca bajo el header (móvil) === */
+@media (max-width: 768px){
+  .contacto-hero{
+    margin-top: 0 !important;      /* no deje hueco bajo el header */
+    position: relative;
+    top: -1px;                      /* cubre cualquier 1px de “rayita” */
+    height: 320px;                  /* mantén el alto del banner */
+    background-position: center 10%;
+  }
+
+  .overlay-contacto{
+    /* empuja el texto para que no quede bajo el header fijo */
+    padding: 100px 12px 16px 12px;  /* top right bottom left */
+    box-sizing: border-box;
+    align-items: flex-start;
+    justify-content: flex-start;
+  }
+
+  .texto-hero-contacto{
+    margin-left: 0 !important;
+    max-width: 560px;
+  }
+  .texto-hero-contacto h1{ font-size: 32px; margin-bottom: 8px; }
+  .texto-hero-contacto p { font-size: 14px; margin-left: 12px; }
+}
+
+/* Por si algún estilo global añade borde al header */
+header{ border-bottom: 0 !important; }
+
+
+
+/* CONTACTO — móvil: texto más abajo (pegado a la izquierda) */
+@media (max-width: 768px){
+  .contacto-hero{
+    height: 320px !important;
+    background-position: center 22% !important; /* muestra un poco más abajo la foto */
+  }
+  .overlay-contacto{
+    justify-content: flex-end !important;   /* lleva el bloque hacia abajo */
+    align-items: flex-start !important;     /* a la izquierda */
+    padding: 0 12px 28px 12px !important;   /* bottom = 28px (ajusta 20–40) */
+    text-align: left !important;
+  }
+  .texto-hero-contacto{
+    margin-left: 0 !important;
+    max-width: 92%;
+  }
+  .texto-hero-contacto h1{ font-size: 30px; margin-bottom: 6px; }
+  .texto-hero-contacto p { font-size: 13.5px; margin-left: 12px; }
+}
+
+/* CONTACTO — móvil: texto bien abajo, a la izquierda */
+@media (max-width: 768px){
+  .contacto-hero{
+    height: 400px !important;                 /* un poco más alto para permitir bajar más */
+    background-position: center 28% !important;
+  }
+
+  .overlay-contacto{
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: flex-start !important;       /* a la izquierda */
+    justify-content: flex-start !important;   /* quitamos “centrado” */
+    padding: 0 12px 36px 12px !important;     /* ↑ empuja el bloque hacia ABAJO */
+    height: 100% !important;
+  }
+
+  /* este truco lo lleva al fondo del banner */
+  .texto-hero-contacto{
+    margin-left: 0 !important;
+    margin-top: auto !important;              /* pega el bloque al fondo */
+    margin-bottom: 0 !important;
+    max-width: 92%;
+  }
+
+  .texto-hero-contacto h1{ font-size: 30px; margin-bottom: 6px; }
+  .texto-hero-contacto p { font-size: 13.5px; margin-left: 12px; }
+}

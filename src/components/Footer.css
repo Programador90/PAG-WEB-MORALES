@@ -1,0 +1,395 @@
+/* FOOTER */
+
+.footer {
+  background-color: #000;
+  color: white;
+  font-family: 'Arial', sans-serif;
+  font-size: 1.05rem;
+}
+
+.footer-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;   /* alinea todas las columnas arriba */
+  padding: 20px 80px 50px 80px;       /* reducimos padding superior */
+  flex-wrap: wrap;
+  gap: 40px;
+}
+
+.footer-col {
+  flex: 1;
+  min-width: 300px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;  /* contenido pegado arriba */
+}
+
+.footer h3 {
+  font-size: 1.7rem;
+  margin-bottom: 20px;
+  font-weight: bold;
+  color: white;
+}
+
+.footer p {
+  font-size: 1.1rem;
+  margin: 10px 0;
+}
+
+.footer-logo {
+  max-width: 180px;
+  height: auto;
+  display: block;
+  object-fit: contain;
+  margin-bottom: 8px;
+  margin-top: -10px;
+
+  /* 🔑 centrado respecto al texto */
+  margin-left: 0;   /* lo mantiene alineado con el texto */
+}
+.footer-col:first-child {
+  align-items: flex-start;   /* mantiene el texto alineado a la izquierda */
+}
+
+.footer-content .footer-col:nth-child(2),
+.footer-content .footer-col:nth-child(3) {
+  padding-top: 26px;   /* ajusta 20–32px según lo veas en pantalla */
+}
+.footer-col p {
+  margin: 4px 0;       /* menos espacio entre párrafos */
+  line-height: 1.3;    /* más compacto */
+}
+
+@media (max-width: 768px) {
+  .footer-logo {
+    max-width: 180px;
+  }
+}
+
+
+.verde-text {
+  color: #d3b81e;
+  font-weight: bold;
+}
+
+.horario {
+  margin-top: 4px;     /* menos separación arriba */
+}
+.redes {
+  margin-top: 15px;
+  font-size: 1.8rem;
+}
+
+.redes i {
+  margin-right: 12px;
+  color: #d3b81e;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+.redes i:hover {
+  transform: scale(1.15);
+}
+
+.footer-bottom {
+  background-color: #d3b81e;
+  color: white;
+  text-align: center;
+  padding: 25px 15px;
+  font-size: 1rem;
+}
+
+.footer-links {
+  margin-top: 12px;
+  flex-wrap: wrap;
+}
+
+.footer-links a {
+  color: white;
+  text-decoration: none;
+  margin: 0 8px;
+}
+
+.footer-links a:hover {
+  text-decoration: underline;
+}
+
+.dev {
+  display: block;
+  margin-top: 12px;
+}
+
+
+.libro-reclamaciones {
+  text-align: center;
+  margin-top: 20px;
+}
+
+.libro-reclamaciones .libro-img {
+  max-width: 140px;
+  height: auto;
+  transition: transform 0.3s ease;
+}
+
+.libro-reclamaciones .libro-img:hover {
+  transform: scale(1.05);
+}
+.redes-con-libro {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start; /* Alinea todo a la izquierda */
+  margin-top: 15px;
+}
+
+.redes {
+  font-size: 1.8rem;
+  display: flex;
+  gap: 12px;
+}
+
+.redes i {
+  color: #d3b81e;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+.redes i:hover {
+  transform: scale(1.15);
+}
+
+.libro-reclamaciones {
+  margin-top: 10px;
+}
+
+.libro-reclamaciones .libro-img {
+  max-width: 130px;
+  height: auto;
+  transition: transform 0.3s ease;
+}
+
+.libro-reclamaciones .libro-img:hover {
+  transform: scale(1.05);
+}
+
+/* ====== MOBILE ONLY ====== */
+@media (max-width: 768px) {
+  .footer { 
+    font-size: 1rem; 
+    overflow-x: hidden;            /* evita scroll horizontal */
+  }
+
+  .footer-content {
+    flex-direction: column;        /* columnas en stack */
+    align-items: stretch;
+    padding: 20px 16px;            /* menos margen lateral */
+    gap: 18px;                     /* menos separación entre bloques */
+  }
+
+  .footer-col {
+    min-width: 0;                  /* permite encoger sin romper layout */
+    width: 100%;
+  }
+
+  .footer-logo {
+    max-width: 150px;
+    margin-top: 0;
+    margin-bottom: 6px;
+  }
+
+  .footer h3 {
+    font-size: 1.25rem;
+    margin: 12px 0;
+  }
+
+  .footer p {
+    font-size: 1rem;
+    margin: 6px 0;
+    line-height: 1.4;
+    word-break: break-word;        /* corta email/direcciones largas */
+  }
+
+  /* quita el “salto” arriba de las cols 2 y 3 en móvil */
+  .footer-content .footer-col:nth-child(2),
+  .footer-content .footer-col:nth-child(3) {
+    padding-top: 0;
+  }
+
+  /* ===== Orden: texto -> Redes -> Libro ===== */
+  .redes-con-libro {
+    display: flex;
+    flex-direction: vertical;      /* fallback por si acaso */
+    flex-direction: column;        /* apilado */
+    align-items: flex-start;
+    gap: 12px;
+    margin-top: 10px;
+  }
+
+  .redes { 
+    order: 1;                      /* primero las redes */
+    margin-top: 8px;
+    font-size: 1.6rem; 
+    display: flex;
+    gap: 14px; 
+  }
+
+  .libro-reclamaciones {
+    order: 2;                      /* luego el Libro de Reclamaciones */
+    margin-top: 6px;
+  }
+
+  .libro-reclamaciones .libro-img {
+    max-width: 130px;
+    height: auto;
+  }
+
+  .footer-bottom {
+    padding: 16px 12px;
+    font-size: 0.9rem;
+  }
+
+  /* textos legales en líneas separadas (solo texto) */
+  .footer-links {
+    margin-top: 8px;
+    display: block;
+  }
+  .footer-links span {
+    display: block;
+    margin: 4px 0;
+  }
+
+  .dev {
+    margin-top: 10px;
+    display: block;
+  }
+}
+
+@media (max-width: 420px) {
+  .footer-logo { max-width: 130px; }
+  .redes { font-size: 1.4rem; gap: 8px; }
+  .footer-bottom { font-size: 0.85rem; }
+}
+
+
+/* ====== COMPACTAR FRANJA INFERIOR (todas las pantallas) ====== */
+.footer-bottom{
+  padding: 14px 10px;    /* antes 25px / 16px */
+  font-size: 0.95rem;
+  line-height: 1.2;      /* texto más apretado */
+}
+
+.footer-links{
+  margin-top: 6px;       /* antes 12px/8px */
+}
+
+.footer-links span{
+  display: inline-block; /* evita saltos raros */
+  margin: 0 4px;         /* reduce separación lateral */
+}
+
+/* firma del dev más cerca */
+.dev{
+  margin-top: 6px;       /* antes 12px/10px */
+}
+
+/* ====== EXTRA COMPACTO EN MÓVIL ====== */
+@media (max-width: 768px){
+  .footer-bottom{
+    padding: 12px 8px;   /* aún menos padding en móvil */
+    font-size: 0.9rem;
+    line-height: 1.15;
+  }
+
+  .footer-links{
+    margin-top: 4px;
+    text-align: center;
+    white-space: normal;
+  }
+
+  /* Si quieres que salgan en columnas verticales pero pegaditas: */
+  /* Descomenta estas 3 líneas y quita los pipes " | " del HTML si prefieres sin barras
+  .footer-links span{
+    display: block;
+    margin: 2px 0;
+  } */
+
+  .dev{
+    margin-top: 6px;
+  }
+}
+
+@media (max-width: 420px){
+  .footer-bottom{ font-size: 0.85rem; }
+}
+
+.dev-link{
+  color: inherit;
+  text-decoration: none;
+  border-bottom: 1px solid transparent;
+  transition: border-color .15s ease, color .15s ease;
+}
+.dev-link:hover{
+  color: #527392;             /* tu amarillo de marca, si quieres */
+  border-color: currentColor; /* subrayado sutil al pasar el mouse */
+}
+
+/* === Redes y Libro perfectamente alineados === */
+.footer .redes-con-libro {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;    /* 👈 vuelve a alinear con el texto */
+  margin-top: 12px;
+  gap: 6px;
+  position: relative;
+  left: 4px;                  /* pequeño ajuste visual hacia la izquierda */
+}
+
+.footer .redes {
+  display: flex;
+  justify-content: flex-start; /* 👈 mantiene íconos a la izquierda */
+  gap: 14px;
+}
+
+.footer .libro-reclamaciones {
+  margin-top: 4px;
+  margin-left: 10px;          /* 👈 mueve el libro un poco al centro respecto a los íconos */
+  text-align: left;
+}
+
+.footer .libro-reclamaciones .libro-img {
+  display: block;
+  max-width: 130px;
+  height: auto;
+  transition: transform 0.3s ease;
+}
+
+.footer .libro-reclamaciones .libro-img:hover {
+  transform: scale(1.05);
+}
+
+/* En pantallas pequeñas, centramos todo */
+@media (max-width: 768px) {
+  .footer .redes-con-libro {
+    align-items: center;
+    left: 0;
+  }
+
+  .footer .redes {
+    justify-content: center;
+  }
+
+  .footer .libro-reclamaciones {
+    margin-left: 0;
+    text-align: center;
+  }
+}
+
+/* === Ajuste fino: mover el libro ligeramente a la derecha === */
+.footer .libro-reclamaciones {
+  margin-left: 35px !important; /* 🔧 prueba con 30–40px según lo veas */
+}
+
+@media (max-width: 768px) {
+  .footer .libro-reclamaciones {
+    margin-left: 0 !important; /* en móvil se mantiene centrado */
+  }
+}

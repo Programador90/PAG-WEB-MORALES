@@ -1,0 +1,544 @@
+.proyectos-container {
+  font-family: 'Arial', sans-serif;
+  background-color: #fff;
+  padding-bottom: 60px;
+  margin: 0;
+  border: none;
+
+  opacity: 0;
+  animation: fadeIn 1s ease-in forwards;
+}
+
+/* Animación global */
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+/* Quita líneas indeseadas debajo del banner */
+.proyectos-container section,
+.proyectos-hero,
+.sin-linea {
+  margin-bottom: 0 !important;
+  padding-bottom: 0 !important;
+  border: none !important;
+}
+
+/* Reutilizamos la misma animación global */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+/* BANNER */
+.proyectos-hero {
+  background-image: url('../assets/banner-proyectos.jpg');
+  background-size: cover;
+  background-position: center;
+  height: 850px; /* vuelve al original */
+  position: relative;
+  display: flex;
+  align-items: flex-start; /* ⬅️ cambiamos esto */
+  justify-content: flex-start;
+  color: white;
+  text-align: left;
+  overflow: hidden;
+  margin-bottom: 0;
+  border-bottom: none;
+
+  opacity: 0;
+  transform: translateY(30px);
+  animation: heroSlide 1s ease-out forwards;
+}
+@keyframes heroSlide {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.proyectos-hero .overlay {
+  z-index: 2;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  height: 100%;
+  text-align: left;
+  padding-left: 120px;
+  padding-right: 108px;
+  padding-top: 190px; /* ⬅️ antes 80px */
+}
+
+
+
+.proyectos-hero h1 {
+  font-size: 48px;
+  font-weight: bold;
+  margin-bottom: 12px;
+  color: white;
+}
+
+.proyectos-hero p {
+  font-size: 18px;
+  max-width: 700px;
+  color: white;
+}
+
+
+.titulo-verde {
+  color: #d3b81e;
+  margin-right: 12px;
+}
+
+/* CUADROS DE PROYECTO */
+.proyectos-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* 3 por fila */
+  gap: 70px;
+  padding: 70px 100px;
+  margin-top: -20px;
+}
+
+
+.proyecto-card {
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  transition: 0.3s;
+  border-radius: 1px;
+  background: #fff;
+  overflow: hidden;
+
+  opacity: 0;
+  transform: translateY(20px);
+  animation: cardFade 0.8s ease-out forwards;
+}
+
+@keyframes cardFade {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Aparecen con retraso progresivo */
+.proyecto-card:nth-child(1) { animation-delay: 0.4s; }
+.proyecto-card:nth-child(2) { animation-delay: 0.6s; }
+.proyecto-card:nth-child(3) { animation-delay: 0.8s; }
+.proyecto-card:nth-child(4) { animation-delay: 1s; }
+.proyecto-card:nth-child(5) { animation-delay: 1.2s; }
+.proyecto-card:nth-child(6) { animation-delay: 1.4s; }
+
+.proyecto-img {
+  position: relative;
+}
+
+.proyecto-img img {
+  width: 100%;
+  height: 250px;
+  object-fit: cover;
+  box-shadow: none;
+}
+
+.categoria-tag {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  background: #d3b81e;
+  color: #ffffff;
+  padding: 5px 10px;
+  font-size: 14px;
+  font-weight: bold;
+  border-radius: 3px;
+}
+
+.boton-expandir {
+  position: absolute;
+  bottom: -15px;
+  right: 15px;
+  background: #d3b81e;
+  color: white;
+  font-size: 20px;
+  border-radius: 50%;
+  width: 30px;
+  height: 30px;
+  text-align: center;
+  line-height: 30px;
+  font-weight: bold;
+}
+
+.proyecto-info {
+  padding: 14px;
+}
+
+.proyecto-info h3 {
+  font-size: 20px;               /* antes 14px */
+  font-weight: 800;
+  line-height: 1.25;
+}
+.proyecto-info p {
+  font-size: 15.5px;             /* antes 12px */
+  line-height: 1.5;
+  color: #2b2b2b;
+  margin-top: 8px;
+}
+
+.proyecto-fecha {
+  font-size: 14px;               /* antes 12px */
+  color: #555;
+  margin-top: 10px;
+}
+
+.texto-hero-proyectos {
+  color: white;
+  margin-left: 60px;
+  max-width: 600px;
+
+  /* animación */
+  opacity: 0;
+  transform: translateX(-40px);
+  animation: contentSlide 1s ease-out forwards;
+  animation-delay: 0.3s;
+}
+
+@keyframes contentSlide {
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.texto-hero-proyectos h1 {
+  font-size: 48px;
+  font-weight: 900;
+  border-left: 6px solid #d3b81e;
+  padding-left: 10px;
+  margin-bottom: 15px;
+  font-family: 'Bebas Neue', sans-serif; /* Si la usas */
+}
+
+.texto-hero-proyectos p {
+  font-size: 16px;
+  margin-left: 16px;
+}
+
+.verde {
+  color: #d3b81e;
+}
+
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+  .proyectos-grid {
+    flex-wrap: wrap;
+    overflow-x: visible;
+    display: grid;
+    grid-template-columns: 1fr;
+    padding: 20px;
+  }
+
+  .proyecto-card {
+    width: 100%;
+  }
+
+  .proyectos-hero {
+    height: 250px;
+  }
+
+  .proyectos-hero h1 {
+    font-size: 28px;
+  }
+
+  .proyectos-hero p {
+    font-size: 14px;
+  }
+}
+
+
+@media (min-width: 1200px) {
+  .proyecto-info h3 { font-size: 22px; }
+  .proyecto-info p { font-size: 16.5px; }
+  .proyecto-fecha   { font-size: 15px; }
+}
+
+/* tablets / móviles */
+@media (max-width: 768px) {
+  .proyecto-info { padding: 12px; }
+  .proyecto-info h3 { font-size: 18px; }
+  .proyecto-info p  { font-size: 14.5px; }
+  .proyecto-fecha   { font-size: 13.5px; }
+}
+
+/* === MÓVIL: separa el banner de las cards === */
+@media (max-width: 768px){
+  /* deja espacio debajo del banner (aunque tenga .sin-linea) */
+  .proyectos-container .proyectos-hero.sin-linea{
+    margin-bottom: 24px !important;   /* prueba 16–32px a gusto */
+  }
+
+  /* quita el margen negativo que pegaba las cards hacia arriba */
+  .proyectos-grid{
+    margin-top: 0 !important;         /* o 8–12px si quieres aún más aire */
+    padding-top: 4px;                  /* respirito extra opcional */
+  }
+
+  /* (opcional) ajusta el padding del contenido del banner en móvil */
+  .proyectos-hero .overlay{
+    padding-left: 16px;
+    padding-right: 16px;
+    padding-top: 90px;                 /* estaba muy alto (150px) */
+  }
+}
+
+/* === MOVIL: más separación y texto del banner más a la izquierda === */
+@media (max-width: 768px){
+
+  /* baja un poco la primera imagen (cards) -> más aire debajo del banner */
+  .proyectos-container .proyectos-hero.sin-linea{
+    margin-bottom: 40px !important;   /* sube a 48–56 si quieres más */
+  }
+
+  /* texto del banner más a la izquierda y un pelín más abajo */
+  .proyectos-hero .overlay{
+    padding-left: 10px;    /* antes 16 */
+    padding-right: 14px;
+    padding-top: 100px;    /* antes 90: baja un poco el texto */
+  }
+
+  /* anula el margen izquierdo grande del desktop */
+  .texto-hero-proyectos{
+    margin-left: 0 !important;  /* antes 60px */
+    max-width: 90%;
+  }
+  .texto-hero-proyectos h1{ padding-left: 8px; }   /* borde dorado */
+  .texto-hero-proyectos p{  margin-left: 12px; }
+
+  /* por si acaso: nada de margen negativo arriba de la grilla */
+  .proyectos-grid{ margin-top: 0 !important; }
+}
+
+/* === MÓVIL: bajar un poco la imagen del banner === */
+@media (max-width: 768px){
+  .proyectos-hero{
+    height: 300px;                 /* antes 250px → más alto */
+    background-position: center 70%; /* mueve el foco hacia abajo */
+  }
+
+  /* opcional: acompaña el texto para que también quede un poco más abajo */
+  .proyectos-hero .overlay{
+    padding-top: 120px;            /* ajusta 110–140 a gusto */
+  }
+}
+
+/* === PROYECTOS — móvil: texto más arriba (como Blog/Contacto) === */
+@media (max-width: 768px){
+  .proyectos-hero{
+    height: 300px;                                  /* alto cómodo */
+    background-position: center 12% !important;     /* sube el encuadre */
+  }
+
+  .proyectos-hero .overlay{
+    padding: 96px 12px 16px 12px !important;        /* top right bottom left */
+    align-items: flex-start !important;
+    text-align: left;
+  }
+
+  .texto-hero-proyectos{
+    margin-left: 0 !important;                      /* pegado a la izquierda */
+    max-width: 600px;
+  }
+  .texto-hero-proyectos h1{ font-size: 32px; margin-bottom: 8px; }
+  .texto-hero-proyectos p { font-size: 14px; margin-left: 12px; }
+
+  /* separa el banner de las cards */
+  .proyectos-container .proyectos-hero.sin-linea{
+    margin-bottom: 28px !important;
+  }
+}
+
+
+
+/* ===== PROYECTOS: COMPACCIÓN EN MÓVIL ===== */
+@media (max-width: 768px) {
+  /* La grilla ocupa menos y deja aire al banner */
+  .proyectos-grid{
+    grid-template-columns: 1fr;
+    gap: 14px;                 /* antes 20+ */
+    padding: 12px 14px 24px;   /* menos padding lateral y vertical */
+    margin-top: 4px !important;
+  }
+
+  /* Tarjeta más compacta */
+  .proyecto-card{
+    border-radius: 6px;
+    box-shadow: 0 2px 8px rgba(0,0,0,.12);
+  }
+
+  /* Imagen más baja */
+  .proyecto-img img{
+    height: 170px;             /* antes 250px */
+  }
+
+  .categoria-tag{
+    top: 8px;
+    left: 8px;
+    padding: 4px 8px;
+    font-size: 12px;
+  }
+
+  /* Contenido con menos padding y tipografía menor */
+  .proyecto-info{
+    padding: 10px 12px;        /* antes 14px */
+  }
+  .proyecto-info h3{
+    font-size: 16px;           /* antes 18–20px */
+    line-height: 1.25;
+    margin: 0 0 6px;
+  }
+  .proyecto-info p{
+    font-size: 13px;           /* antes 14.5–15.5px */
+    line-height: 1.45;
+    margin-top: 4px;
+  }
+  .proyecto-fecha{
+    font-size: 12px;           /* antes 13.5–14px */
+    margin-top: 6px;
+  }
+
+  /* Extra: más protagonismo para el banner */
+  .proyectos-hero{
+    height: 320px;             /* un poco más alto para destacar */
+    background-position: center 18% !important;
+  }
+  .proyectos-hero .overlay{
+    padding: 100px 12px 16px !important;
+  }
+  .texto-hero-proyectos h1{ font-size: 30px; }
+  .texto-hero-proyectos p { font-size: 13.5px; }
+}
+
+/* Aún más compacto en pantallas muy pequeñas */
+@media (max-width: 420px){
+  .proyecto-img img{ height: 155px; }
+  .proyecto-info{ padding: 9px 10px; }
+  .proyecto-info h3{ font-size: 15px; }
+  .proyecto-info p { font-size: 12.5px; }
+  .proyecto-fecha{ font-size: 11.5px; }
+}
+
+/* === PROYECTOS — móvil: bajar el texto del hero === */
+@media (max-width: 768px){
+  .proyectos-hero{
+    height: 400px !important;                 /* sube a 340 si quieres más alto */
+    background-position: center 22% !important;
+  }
+  .proyectos-hero .overlay{
+    display: flex !important;
+    justify-content: flex-end !important;     /* lleva el bloque hacia abajo */
+    align-items: flex-start !important;       /* pegado a la izquierda */
+    padding: 0 12px 6px 12px !important;     /* bottom = 26px (ajusta 18–40) */
+    text-align: left !important;
+  }
+  .texto-hero-proyectos{
+    margin-left: 0 !important;
+    max-width: 92%;
+  }
+  .texto-hero-proyectos h1{ font-size: 30px; margin-bottom: 6px; }
+  .texto-hero-proyectos p { font-size: 13.5px; margin-left: 12px; }
+}
+
+/* === PROYECTOS — móvil (≤768px) con alto 400 y texto abajo-izquierda === */
+@media (max-width: 768px){
+  .proyectos-hero{
+    height: 400px !important;
+    background-position: center 22% !important;
+  }
+  .proyectos-hero .overlay{
+    display: flex !important;
+    justify-content: flex-end !important;   /* abajo */
+    align-items: flex-start !important;     /* a la izquierda */
+    padding: 0 12px 20px 12px !important;   /* ⬅️ separa 20px del borde inferior */
+    text-align: left !important;
+  }
+  .texto-hero-proyectos{
+    margin-left: 0 !important;
+    max-width: 92%;
+  }
+  .texto-hero-proyectos h1{ font-size: 30px; margin-bottom: 6px; }
+  .texto-hero-proyectos p { font-size: 13.5px; margin-left: 12px; }
+}
+
+/* Afinado para pantallas 390–430px: un pelín más arriba si queda muy pegado */
+@media (max-width: 430px){
+  .proyectos-hero .overlay{ padding-bottom: 24px !important; }
+}
+
+/* === PROYECTOS — móvil (≤768px) | alto 400 y texto un poco más arriba === */
+@media (max-width: 768px){
+  .proyectos-hero{
+    height: 400px !important;
+    background-position: center 22% !important;
+  }
+  .proyectos-hero .overlay{
+    display: flex !important;
+    justify-content: flex-end !important;   /* sigue anclado abajo */
+    align-items: flex-start !important;     /* a la izquierda */
+    padding: 0 12px 64px 12px !important;   /* ⬅️ sube el bloque (antes 6–20px) */
+    text-align: left !important;
+  }
+  .texto-hero-proyectos{
+    margin-left: 0 !important;
+    max-width: 92%;
+  }
+  .texto-hero-proyectos h1{ font-size: 30px; margin-bottom: 6px; }
+  .texto-hero-proyectos p { font-size: 13.5px; margin-left: 12px; }
+}
+
+/* --- PROYECTOS: móvil (≤768px) — alto 400, texto más arriba --- */
+@media (max-width: 768px){
+  .proyectos-hero{
+    position: relative;
+    height: 400px !important;
+    background-position: center 22% !important;
+  }
+
+  /* anulamos paddings del overlay para que no afecten */
+  .proyectos-hero .overlay{
+    padding: 0 !important;
+  }
+
+  /* colocamos el bloque de texto fijo arriba-izquierda (ajusta bottom) */
+  .proyectos-hero .texto-hero-proyectos{
+    position: absolute;
+    left: 12px;
+    right: 12px;
+    bottom: 110px;      /* ← súbelo/bájalo cambiando este valor (90–140px) */
+    margin: 0 !important;
+  }
+
+  .texto-hero-proyectos h1{ font-size: 30px; margin: 0 0 6px; }
+  .texto-hero-proyectos p { font-size: 13.5px; margin: 0 0 0 12px; }
+}
+
+/* PROYECTOS — móvil (≤768px): texto un poco más abajo */
+@media (max-width: 768px){
+  .proyectos-hero .texto-hero-proyectos{
+    bottom: 32px !important;  /* antes 110px; prueba 90–100 según te guste */
+  }
+}
+/* Desktop: centro-izquierda */
+@media (min-width: 769px){
+  .proyectos-hero .overlay{
+    padding: 0 108px 0 120px !important; /* mismos laterales */
+    justify-content: center !important;  /* ⬅️ centra VERTICAL */
+    align-items: flex-start !important;  /* ⬅️ pegado a la izquierda */
+  }
+  .proyectos-hero .texto-hero-proyectos{
+    position: static !important;         /* cancela el absolute/bottom */
+    margin-left: 0 !important;
+  }
+}
